@@ -1,5 +1,5 @@
 export LANG=ja_JP.UTF-8
-export EDITOR=vi
+export EDITOR=emacs
 
 
 typeset -U path
