@@ -1,10 +1,12 @@
 export LANG=ja_JP.UTF-8
 export EDITOR=emacs
+export PAGER=less
 
 
 typeset -U path
-path=(~/local/bin(N-/) ~/bin(N-/) $path)
+path=(~/opt/*/(s|)bin(N-/) ~/local/bin(N-/) ~/bin(N-/) $path)
 if builtin which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if builtin which docker-machine > /dev/null; then eval "$(docker-machine env 2> /dev/null)"; fi
 
 
 bindkey -e                  # Emacsライクなキーバインドを使用する
