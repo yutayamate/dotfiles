@@ -50,4 +50,6 @@ case "$OSTYPE" in
         alias ls="ls --color=auto" ;;
 esac
 
-alias emacs="emacs -nw"
+
+if builtin which VBoxManage > /dev/null; then alias startvm='(){ VBoxManage startvm $1 --type headless }'; fi
+if builtin which emacs > /dev/null; then alias emacs="emacs -nw"; fi
