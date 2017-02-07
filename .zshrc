@@ -5,12 +5,6 @@ export PAGER=less
 typeset -U path
 path=(~/opt/*/(s|)bin(N-/) ~/local/bin(N-/) ~/bin(N-/) ~/.nodebrew/current/bin(N-/) $path)
 
-if builtin which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if builtin which docker-machine > /dev/null; then eval "$(docker-machine env 2> /dev/null)"; fi
-if builtin which VBoxManage > /dev/null; then alias startvm='(){ VBoxManage startvm $1 --type headless }'; fi
-
-bindkey -e                  # Emacsライクなキーバインドを使用する
-bindkey "^p" history-beginning-search-backward
 setopt always_to_end        # 補完の後、カーソルを末尾に移動する
 setopt auto_cd              # ディレクトリ名でcdする
 setopt auto_list            # TABを入力後、補完候補を表示する
@@ -30,6 +24,9 @@ setopt magic_equal_subst    # コマンドライン引数での"="の後ろを�
 setopt pushd_ignore_dups    # pushdで同じディレクトリを重複してpushdしない
 setopt share_history        # 他のシェルとヒストリを共有する
 
+bindkey -e                  # Emacsライクなキーバインドを使用する
+bindkey "^p" history-beginning-search-backward
+
 autoload -U compinit; compinit                          # 補完機能を使用する
 autoload -U colors; colors                              # カラーで表示する
 
@@ -44,6 +41,10 @@ PROMPT="[%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[green]%}%M%{$reset_color%}:%{$fg[
 RPROMPT="%B(%D %*)%b"
 [ -n "$SSH_CONNECTION" ] &&
     PROMPT="[%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[red]%}%M%{$reset_color%}:%{$fg[red]%}%y%{$reset_color%}] [%U%{$fg[yellow]%}%~%{$reset_color%}%u]"$'\n'"%# "
+
+if builtin which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if builtin which docker-machine > /dev/null; then eval "$(docker-machine env 2> /dev/null)"; fi
+if builtin which VBoxManage > /dev/null; then alias startvm='(){ VBoxManage startvm $1 --type headless }'; fi
 
 case "$OSTYPE" in
     darwin*)
