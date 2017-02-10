@@ -3,7 +3,7 @@ export EDITOR=vi
 export PAGER=less
 
 typeset -U path
-path=(~/opt/*/(s|)bin(N-/) ~/local/bin(N-/) ~/bin(N-/) ~/.nodebrew/current/bin(N-/) $path)
+path=(~/opt/*/(s|)bin(N-/) ~/local/bin(N-/) ~/bin(N-/) ~/.pyenv/bin(N-/) ~/.nodebrew/current/bin(N-/) $path)
 
 setopt always_to_end        # 補完の後、カーソルを末尾に移動する
 setopt auto_cd              # ディレクトリ名でcdする
@@ -52,3 +52,5 @@ case "$OSTYPE" in
     linux*)
         alias ls="ls --color=auto" ;;
 esac
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
