@@ -42,10 +42,6 @@ RPROMPT="%B(%D %*)%b"
 [ -n "$SSH_CONNECTION" ] &&
     PROMPT="[%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[red]%}%M%{$reset_color%}:%{$fg[red]%}%y%{$reset_color%}] [%U%{$fg[yellow]%}%~%{$reset_color%}%u]"$'\n'"%# "
 
-if builtin which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if builtin which docker-machine > /dev/null; then eval "$(docker-machine env 2> /dev/null)"; fi
-if builtin which VBoxManage > /dev/null; then alias startvm='(){ VBoxManage startvm $1 --type headless }'; fi
-
 case "$OSTYPE" in
     darwin*)
         alias ls="ls -G" ;;
@@ -53,4 +49,9 @@ case "$OSTYPE" in
         alias ls="ls --color=auto" ;;
 esac
 
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+if builtin which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if builtin which docker-machine > /dev/null; then eval "$(docker-machine env 2> /dev/null)"; fi
+if builtin which VBoxManage > /dev/null; then alias startvm='(){ VBoxManage startvm $1 --type headless }'; fi
+
+test -e ~/.zshrc.local && source ~/.zshrc.local
+test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
