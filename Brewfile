@@ -1,5 +1,7 @@
 brew 'vim'
 brew 'wget'
+brew 'sshuttle'
+brew 'watch'
 brew 'tmux'
 brew 'htop'
 brew 'p7zip'

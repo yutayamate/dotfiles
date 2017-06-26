@@ -38,6 +38,8 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'itchyny/lightline.vim'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'Shougo/neocomplcache.vim'
+    Plugin 'Shougo/neosnippet'
+    Plugin 'Shougo/neosnippet-snippets'
     Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'nanotech/jellybeans.vim'
     call vundle#end()
@@ -45,7 +47,10 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
 
     let g:neocomplcache_enable_at_startup=1
     let g:neocomplcache_enable_smart_case=1
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+    let g:neosnippet#snippets_directory = '~/.vim/snippets'
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
 
     let g:indent_guides_enable_on_vim_startup=1
     let g:indent_guides_start_level=1
@@ -54,6 +59,5 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     let g:jellybeans_overrides = {
     \ 'background': { 'ctermbg': 'none', '256ctermbg': 'none' }
     \ }
-
     colorscheme jellybeans
 endif
