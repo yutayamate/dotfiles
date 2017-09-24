@@ -1,6 +1,0 @@
-ipython
-numpy
-scipy
-pandas
-rainbowstream
-
