@@ -5,7 +5,6 @@ export PAGER=less
 typeset -U path
 path=(~/opt/*/(s|)bin(N-/) ~/local/bin(N-/) ~/bin(N-/) ~/.pyenv/bin(N-/) $path)
 
-setopt always_last_prompt
 setopt always_to_end
 setopt auto_cd
 setopt auto_list
@@ -18,20 +17,23 @@ setopt correct_all
 setopt extended_history
 setopt glob_subst
 setopt hist_expand
-setopt hist_ignore_dups
 setopt hist_ignore_all_dups
+setopt hist_ignore_dups
 setopt hist_reduce_blanks
 setopt interactive_comments
 setopt list_packed
 setopt list_rows_first
 setopt list_types
 setopt magic_equal_subst
+setopt no_nomatch
 setopt pushd_ignore_dups
 setopt share_history
+setopt transient_rprompt
 
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
+autoload -Uz select-word-style && select-word-style bash
 
 prompt fade cyan
 
@@ -54,5 +56,18 @@ case "$OSTYPE" in
 esac
 if command -v pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
 if command -v VBoxManage &> /dev/null; then alias startvm='(){ VBoxManage startvm $1 --type headless }'; fi
+
+if [[ -d ~/.zplug ]]; then
+    source ~/.zplug/init.zsh
+    zplug "zsh-users/zsh-completions"
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
+    if ! zplug check --verbose; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+    fi
+    zplug load
+fi
 
 test -e ~/.zshrc.local && source ~/.zshrc.local
