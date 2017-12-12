@@ -35,7 +35,7 @@ autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
 
-prompt fade cyan
+if [ -z "$SSH_CONNECTION" ]; then prompt fade blue; else prompt fade red; fi
 
 bindkey -e
 bindkey "^p" history-beginning-search-backward
