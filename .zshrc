@@ -3,7 +3,7 @@ export EDITOR=vi
 export PAGER=less
 
 typeset -U path
-path=(~/opt/*/(s|)bin(N-/) ~/local/bin(N-/) ~/bin(N-/) ~/.pyenv/bin(N-/) $path)
+path=(~/.opt/*/(s|)bin(N-/) ~/.local/bin(N-/) ~/.bin(N-/) $path)
 
 setopt always_to_end
 setopt auto_cd
@@ -54,8 +54,6 @@ case "$OSTYPE" in
     linux*)
         alias ls="ls --color=auto" ;;
 esac
-if command -v pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
-if command -v VBoxManage &> /dev/null; then alias startvm='(){ VBoxManage startvm $1 --type headless }'; fi
 
 if [[ -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh
