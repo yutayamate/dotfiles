@@ -3,7 +3,7 @@ export EDITOR=vi
 export PAGER=less
 
 typeset -U path
-path=(~/.opt/*/(s|)bin(N-/) ~/.local/bin(N-/) ~/.bin(N-/) $path)
+path=(~/.tools/*(N-/) ~/.opt/*/(s|)bin(N-/) ~/.local/(s|)bin(N-/) ~/.(s|)bin(N-/) $path)
 
 setopt always_to_end
 setopt auto_cd
@@ -35,8 +35,6 @@ autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
 
-if [ -z "$SSH_CONNECTION" ]; then prompt fade blue; else prompt fade red; fi
-
 bindkey -e
 bindkey "^p" history-beginning-search-backward
 bindkey "^n" history-beginning-search-forward
@@ -45,8 +43,8 @@ zstyle ":completion:*:default" menu select=2
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
 
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 
 case "$OSTYPE" in
     darwin*)
@@ -55,10 +53,19 @@ case "$OSTYPE" in
         alias ls="ls --color=auto" ;;
 esac
 
+if [[ -n $SSH_CONNECTION ]]; then
+    prompt fade red
+else
+    prompt fade blue
+fi
+
 if [[ -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting", defer:2
+    zplug "docker/cli", use:contrib/completion/zsh
+    zplug "docker/compose", use:contrib/completion/zsh
+    # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
         if read -q; then
