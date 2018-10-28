@@ -75,4 +75,6 @@ if [[ -d ~/.zplug ]]; then
     zplug load
 fi
 
+builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
+
 test -e ~/.zshrc.local && source ~/.zshrc.local
