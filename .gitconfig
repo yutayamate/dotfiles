@@ -1,3 +1,5 @@
 [user]
 	name = Yuta Yamate
 	email = yyuuta88@users.noreply.github.com
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh
