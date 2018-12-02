@@ -61,6 +61,7 @@ fi
 
 if [[ -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh
+    zstyle ":zplug:tag" depth 1
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting", defer:2
     zplug "docker/cli", use:contrib/completion/zsh
