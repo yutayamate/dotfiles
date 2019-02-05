@@ -63,7 +63,7 @@ if [[ -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh
     zstyle ":zplug:tag" depth 1
     zplug "zsh-users/zsh-completions"
-    zplug "zsh-users/zsh-syntax-highlighting", defer:2
+    zplug "zsh-users/zsh-syntax-highlighting"
     zplug "docker/cli", use:contrib/completion/zsh
     zplug "docker/compose", use:contrib/completion/zsh
     # Install plugins if there are plugins that have not been installed
