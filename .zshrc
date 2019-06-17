@@ -3,7 +3,7 @@ export EDITOR=vi
 export PAGER=less
 
 typeset -U path
-path=(~/.tools/*(N-/) ~/.opt/*/(s|)bin(N-/) ~/.local/(s|)bin(N-/) ~/.(s|)bin(N-/) $path)
+path=(~/.tools/*(N-/) ~/.opt/*/(s|)bin(N-/) ~/.local/(s|)bin(N-/) ~/.(s|)bin(N-/) /usr/local/sbin(N-/) $path)
 
 setopt always_to_end
 setopt auto_cd
