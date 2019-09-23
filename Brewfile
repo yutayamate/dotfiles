@@ -1,3 +1,4 @@
+brew 'ansible'
 brew 'htop'
 brew 'jadx'
 brew 'figlet'
