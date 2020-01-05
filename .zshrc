@@ -64,8 +64,8 @@ if [[ -d ~/.zplug ]]; then
     zstyle ":zplug:tag" depth 1
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting"
-    zplug "docker/cli", use:"contrib/completion/zsh"
-    zplug "docker/compose", use:"contrib/completion/zsh"
+    zplug "plugins/docker", from:oh-my-zsh, use:"_*"
+    zplug "plugins/docker-compose", from:oh-my-zsh, use:"_*"
     zplug "yutayamate/bin", as:command, use:"*"
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
