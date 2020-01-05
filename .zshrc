@@ -66,6 +66,7 @@ if [[ -d ~/.zplug ]]; then
     zplug "zsh-users/zsh-syntax-highlighting"
     zplug "docker/cli", use:contrib/completion/zsh
     zplug "docker/compose", use:contrib/completion/zsh
+    zplug "yutayamate/bin", as:command
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
@@ -81,4 +82,5 @@ builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 builtin command -v gcloud > /dev/null 2>&1 && source $(dirname $(command -v gcloud))/../completion.zsh.inc
 builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 
+test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
