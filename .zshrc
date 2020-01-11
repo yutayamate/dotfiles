@@ -67,7 +67,7 @@ if [[ -d ~/.zplug ]]; then
     zplug "zsh-users/zsh-syntax-highlighting"
     zplug "plugins/docker", from:oh-my-zsh, use:"_*"
     zplug "plugins/docker-compose", from:oh-my-zsh, use:"_*"
-    zplug "yutayamate/bin", as:command, use:"*"
+    zplug "yutayamate/bin", as:command, use:"bin/*"
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
