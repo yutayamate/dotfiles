@@ -46,6 +46,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+alias grep="grep --color=auto"
 case "$OSTYPE" in
     darwin*)
         alias ls="ls -G" ;;
@@ -54,9 +55,9 @@ case "$OSTYPE" in
 esac
 
 if [[ -n $SSH_CONNECTION ]]; then
-    prompt fade red
+    prompt fade red && setopt prompt_sp
 else
-    prompt fade blue
+    prompt fade blue && setopt prompt_sp
 fi
 
 if [[ -d ~/.zplug ]]; then
