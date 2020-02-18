@@ -16,7 +16,7 @@ brew 'telnet'
 brew 'tmux'
 brew 'tree'
 brew 'unrar'
-brew 'w3m
+brew 'w3m'
 brew 'watch'
 brew 'wakeonlan'
 brew 'wget'
