@@ -8,8 +8,9 @@ path=(
     ~/.opt/*/(s|)bin(N-/)
     ~/.local/(s|)bin(N-/)
     ~/.(s|)bin(N-/)
-    /opt/*/(s|)bin(N-/)
+    /usr/local/opt/*/(s|)bin(N-/)
     /usr/local/(s|)bin(N-/)
+    /opt/*/(s|)bin(N-/)
     /usr/(s|)bin(N-/)
     /(s|)bin(N-/)
     $path
@@ -92,6 +93,7 @@ builtin command -v rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 builtin command -v gcloud > /dev/null 2>&1 && source $(dirname $(command -v gcloud))/../completion.zsh.inc
 builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
+builtin command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
