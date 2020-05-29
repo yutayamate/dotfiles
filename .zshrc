@@ -76,8 +76,9 @@ if [[ -d ~/.zplug ]]; then
     zstyle ":zplug:tag" depth 1
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting"
-    zplug "plugins/docker", from:oh-my-zsh, use:"_*"
-    zplug "plugins/docker-compose", from:oh-my-zsh, use:"_*"
+    zplug "plugins/docker", from:oh-my-zsh
+    zplug "plugins/docker-compose", from:oh-my-zsh
+    zplug "plugins/gcloud", from:oh-my-zsh
     zplug "yutayamate/bin", as:command, use:"bin/*"
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
@@ -93,7 +94,6 @@ builtin command -v rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 builtin command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
-builtin command -v gcloud > /dev/null 2>&1 && source $(dirname $(readlink $(command -v gcloud)))/../completion.zsh.inc
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
