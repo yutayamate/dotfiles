@@ -76,6 +76,7 @@ if [[ -d ~/.zplug ]]; then
     zstyle ":zplug:tag" depth 1
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting"
+    zplug "zsh-users/zsh-autosuggestions"
     zplug "plugins/docker", from:oh-my-zsh
     zplug "plugins/docker-compose", from:oh-my-zsh
     zplug "plugins/gcloud", from:oh-my-zsh
@@ -89,6 +90,7 @@ if [[ -d ~/.zplug ]]; then
         fi
     fi
     zplug load
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 fi
 
 builtin command -v rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
