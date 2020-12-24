@@ -80,6 +80,7 @@ if [[ -d ~/.zplug ]]; then
     zplug "plugins/docker", from:oh-my-zsh
     zplug "plugins/docker-compose", from:oh-my-zsh
     zplug "plugins/gcloud", from:oh-my-zsh
+    zplug "plugins/kubectl", from:oh-my-zsh
     zplug "plugins/minikube", from:oh-my-zsh
     zplug "yutayamate/bin", as:command, use:"bin/*"
     # Install plugins if there are plugins that have not been installed
