@@ -27,7 +27,3 @@ jobs:
 
       - name: Run brew bundle
         run: brew bundle
-
-      - name: Load .zshrc
-        run: source ${GITHUB_WORKSPACE}/.zshrc
-        shell: /bin/zsh {0}
