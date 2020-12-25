@@ -30,4 +30,4 @@ jobs:
 
       - name: Load .zshrc
         run: source ${GITHUB_WORKSPACE}/.zshrc
-        shell: zsh
+        shell: /bin/zsh {0}
