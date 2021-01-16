@@ -1,5 +1,5 @@
 export LANG=en_US.UTF-8
-export EDITOR=vi
+export EDITOR=nano
 export PAGER=less
 
 typeset -U path
@@ -82,6 +82,7 @@ if [[ -d ~/.zplug ]]; then
     zplug "plugins/gcloud", from:oh-my-zsh
     zplug "plugins/kubectl", from:oh-my-zsh
     zplug "plugins/minikube", from:oh-my-zsh
+    zplug "plugins/nmap", from:oh-my-zsh
     zplug "yutayamate/bin", as:command, use:"bin/*"
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
