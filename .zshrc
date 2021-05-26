@@ -96,7 +96,7 @@ if [[ -d ~/.zplug ]]; then
 fi
 
 builtin command -v rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
-builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
+builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
