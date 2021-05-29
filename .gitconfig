@@ -1,3 +1,5 @@
 [user]
 	name = Yuta Yamate
 	email = 11874627+yutayamate@users.noreply.github.com
+[pull]
+	rebase = false
