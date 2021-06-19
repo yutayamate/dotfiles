@@ -66,9 +66,9 @@ case "$OSTYPE" in
 esac
 
 if [[ -n $SSH_CONNECTION ]]; then
-    prompt fade magenta && setopt prompt_sp
-else
     prompt fade red && setopt prompt_sp
+else
+    prompt fade blue && setopt prompt_sp
 fi
 
 if [[ -d ~/.zplug ]]; then
