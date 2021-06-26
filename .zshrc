@@ -81,8 +81,6 @@ if [[ -d ~/.zplug ]]; then
     zplug "plugins/docker-compose", from:oh-my-zsh
     zplug "plugins/gcloud", from:oh-my-zsh
     zplug "plugins/kubectl", from:oh-my-zsh
-    zplug "plugins/minikube", from:oh-my-zsh
-    zplug "plugins/nmap", from:oh-my-zsh
     zplug "yutayamate/bin", as:command, use:"bin/*"
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
@@ -95,7 +93,6 @@ if [[ -d ~/.zplug ]]; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 fi
 
-builtin command -v rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
