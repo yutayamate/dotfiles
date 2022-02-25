@@ -60,7 +60,8 @@ SAVEHIST=10000
 alias grep="grep --color=auto"
 case "$OSTYPE" in
     darwin*)
-        alias ls="ls -G" ;;
+        alias ls="ls -G"
+        alias tar="tar --disable-copyfile" ;;
     linux*)
         alias ls="ls --color=auto" ;;
 esac
