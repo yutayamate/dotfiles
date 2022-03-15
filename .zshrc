@@ -93,7 +93,7 @@ if [[ -d ~/.zplug ]]; then
     fi
     zplug load
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
-    FZF_DEFAULT_OPTS='--reverse'
+    export FZF_DEFAULT_OPTS='--reverse'
 fi
 
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
