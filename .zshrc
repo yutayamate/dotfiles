@@ -81,9 +81,12 @@ if [[ -d ~/.zplug ]]; then
     zplug "plugins/docker", from:oh-my-zsh
     zplug "plugins/gcloud", from:oh-my-zsh
     zplug "yutayamate/bin", as:command, use:"bin/*"
-    if [[ $OSTYPE == *darwin* ]]; then
-        zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*darwin*amd64*"
-    fi
+    case "$OSTYPE" in
+        darwin*)
+            zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*darwin*amd64*" ;;
+        linux*)
+            zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf, use:"*linux*amd64*" ;;
+    esac
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
