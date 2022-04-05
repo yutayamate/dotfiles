@@ -81,8 +81,6 @@ if [[ -d ~/.zplug ]]; then
     zplug "plugins/docker", from:oh-my-zsh
     zplug "plugins/gcloud", from:oh-my-zsh
     zplug "yutayamate/bin", as:command, use:"bin/*"
-    zplug "stedolan/jq", from:gh-r, as:command, rename-to:jq
-    zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
@@ -92,9 +90,9 @@ if [[ -d ~/.zplug ]]; then
     fi
     zplug load
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
-    export FZF_DEFAULT_OPTS='--reverse'
 fi
 
+builtin command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS='--reverse'
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 
