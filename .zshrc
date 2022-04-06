@@ -72,6 +72,7 @@ else
     prompt fade blue && setopt prompt_sp
 fi
 
+alias install_zplug="git clone https://github.com/zplug/zplug ~/.zplug && source .zshrc"
 if [[ -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh
     zstyle ":zplug:tag" depth 1
