@@ -72,9 +72,9 @@ else
     prompt fade blue && setopt prompt_sp
 fi
 
-alias install_zplug="git clone https://github.com/zplug/zplug ~/.zplug && source .zshrc"
-if [[ -d ~/.zplug ]]; then
-    source ~/.zplug/init.zsh
+ZPLUG_HOME="$HOME/.zplug"
+if [[ -d $ZPLUG_HOME ]]; then
+    source $ZPLUG_HOME/init.zsh
     zstyle ":zplug:tag" depth 1
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting"
@@ -92,6 +92,7 @@ if [[ -d ~/.zplug ]]; then
     zplug load
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 fi
+alias zplug-install="git clone https://github.com/zplug/zplug $ZPLUG_HOME && source .zshrc"
 
 builtin command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS='--reverse'
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
