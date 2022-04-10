@@ -72,7 +72,7 @@ else
     prompt fade blue && setopt prompt_sp
 fi
 
-ZPLUG_HOME="$HOME/.zplug"
+ZPLUG_HOME=~/.zplug
 if [[ -d $ZPLUG_HOME ]]; then
     source $ZPLUG_HOME/init.zsh
     zstyle ":zplug:tag" depth 1
