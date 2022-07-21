@@ -97,6 +97,7 @@ alias zplug-install="git clone https://github.com/zplug/zplug $ZPLUG_HOME && sou
 builtin command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS='--reverse'
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
+builtin command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
