@@ -3,3 +3,5 @@
     email = 11874627+yutayamate@users.noreply.github.com
 [pull]
     rebase = false
+[core]
+    hooksPath = ~/.config/git/hooks
