@@ -102,7 +102,8 @@ builtin command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS='--reverse'
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 builtin command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
-builtin command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh)
+builtin command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
+builtin command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
