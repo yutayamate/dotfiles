@@ -104,6 +104,7 @@ builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 builtin command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 builtin command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
 builtin command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
+builtin command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
