@@ -65,7 +65,6 @@ alias grep="grep --color=auto"
 case "$OSTYPE" in
     darwin*)
         alias ls="ls -G"
-        alias pbcopy="pbcopy; pbpaste"
         # alias tar="COPYFILE_DISABLE=1 tar"
         ;;
     linux*)
