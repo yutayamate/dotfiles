@@ -100,7 +100,7 @@ if [[ -d $ZPLUG_HOME ]]; then
 fi
 alias zplug-install="git clone https://github.com/zplug/zplug $ZPLUG_HOME && source .zshrc"
 
-builtin command -v xclip > /dev/null 2>&1 && alias pbcopy='xclip -selection clipboard' && alias pbpaste='xclip -selection clipboard -o'
+builtin command -v xclip > /dev/null 2>&1 && alias pbcopy='xclip -selection primary' && alias pbpaste='xclip -selection primary -o'
 builtin command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS='--reverse'
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
