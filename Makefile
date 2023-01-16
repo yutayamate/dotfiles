@@ -25,7 +25,7 @@ tmux:
 
 .PHONY: vim
 vim:
-	mkdir -p ${PWD}/.vim
+	mkdir -p ${HOME}/.vim
 	ln -snfv ${PWD}/.vim/vimrc ${HOME}/.vim/vimrc
 
 .PHONY: sqlite
