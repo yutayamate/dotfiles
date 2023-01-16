@@ -1,3 +1,4 @@
+XDG_CONFIG_HOME = ${HOME}/.config
 .DEFAULT_GOAL := help
 
 all: install
@@ -6,23 +7,23 @@ install: xdg emacs git matploitlib tmux vim sqlite screen zsh
 
 .PHONY: xdg
 xdg:
-	mkdir -p ${HOME}/.config
+	mkdir -p ${XDG_CONFIG_HOME}
 
 .PHONY: emacs
 emacs:
-	ln -snFv ${PWD}/.config/emacs ${HOME}/.config/emacs
+	ln -snFv ${PWD}/.config/emacs ${XDG_CONFIG_HOME}/emacs
 
 .PHONY: git
 git:
-	ln -snFv ${PWD}/.config/git ${HOME}/.config/git
+	ln -snFv ${PWD}/.config/git ${XDG_CONFIG_HOME}/git
 
 .PHONY: matploitlib
 matploitlib:
-	ln -snFv ${PWD}/.config/matplotlib ${HOME}/.config/matplotlib
+	ln -snFv ${PWD}/.config/matplotlib ${XDG_CONFIG_HOME}/matplotlib
 
 .PHONY: tmux
 tmux:
-	ln -snFv ${PWD}/.config/tmux ${HOME}/.config/tmux
+	ln -snFv ${PWD}/.config/tmux ${XDG_CONFIG_HOME}/tmux
 
 .PHONY: vim
 vim:
