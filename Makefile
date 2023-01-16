@@ -1,6 +1,7 @@
-all: test install
+.DEFAULT_GOAL := help
 
-test:
+all: install
+
 install: xdg emacs git matploitlib tmux vim sqlite screen zsh
 
 .PHONY: xdg
@@ -39,3 +40,7 @@ screen:
 .PHONY: zsh
 zsh:
 	ln -snfv ${PWD}/.zshrc ${HOME}/.zshrc
+
+.PHONY: help
+help:
+	@echo "Usage: make all | make install"
