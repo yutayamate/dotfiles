@@ -1,4 +1,4 @@
-XDG_CONFIG_HOME = ${HOME}/.config
+XDG_CONFIG_HOME ?= ${HOME}/.config
 .DEFAULT_GOAL := help
 
 all: install
