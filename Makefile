@@ -3,7 +3,7 @@ XDG_CONFIG_HOME = ${HOME}/.config
 
 all: install
 
-install: xdg emacs git matploitlib tmux vim sqlite screen zsh
+install: xdg emacs git matploitlib tmux ssh vim sqlite screen zsh
 
 .PHONY: xdg
 xdg:
@@ -24,6 +24,11 @@ matploitlib:
 .PHONY: tmux
 tmux:
 	ln -snFv ${PWD}/.config/tmux ${XDG_CONFIG_HOME}/tmux
+
+.PHONY: ssh
+ssh:
+	mkdir -p ${HOME}/.ssh
+	ln -snfv ${PWD}/.ssh/config ${HOME}/.ssh/config
 
 .PHONY: vim
 vim:
