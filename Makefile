@@ -49,4 +49,4 @@ zsh:
 
 .PHONY: help
 help:
-	@echo "Usage: make all | make install"
+	@echo "Usage: make all | make install | make help"
