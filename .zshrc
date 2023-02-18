@@ -37,6 +37,7 @@ setopt list_rows_first
 setopt list_types
 setopt magic_equal_subst
 setopt no_nomatch
+setopt prompt_subst
 setopt pushd_ignore_dups
 setopt share_history
 setopt transient_rprompt
@@ -45,6 +46,7 @@ autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
+autoload -Uz vcs_info && precmd () { vcs_info }
 
 bindkey -e
 bindkey "^p" history-beginning-search-backward
@@ -52,6 +54,9 @@ bindkey "^n" history-beginning-search-forward
 
 zstyle ":completion:*:default" menu select=2
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
+zstyle ":vcs_info:*" formats "[%b]"
+zstyle ":vcs_info:*" actionformats "[%b|%a]"
+zstyle ":vcs_info:git:*" check-for-changes false
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -73,6 +78,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
     prompt fade blue && setopt prompt_sp
 fi
+RPROMPT='%F{yellow}${vcs_info_msg_0_}'
 
 ZPLUG_HOME=~/.zplug
 if [[ -d $ZPLUG_HOME ]]; then
@@ -96,8 +102,8 @@ if [[ -d $ZPLUG_HOME ]]; then
 fi
 alias zplug-install="git clone https://github.com/zplug/zplug $ZPLUG_HOME && source .zshrc"
 
-builtin command -v xclip > /dev/null 2>&1 && alias pbcopy='xclip -selection primary' && alias pbpaste='xclip -selection primary -o'
-builtin command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS='--reverse'
+builtin command -v xclip > /dev/null 2>&1 && alias pbcopy="xclip -selection primary" && alias pbpaste="xclip -selection primary -o"
+builtin command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
 builtin command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 builtin command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 builtin command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
