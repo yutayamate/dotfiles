@@ -15,10 +15,6 @@ path=(
     /(s|)bin(N-/)
     $path
 )
-fpath=(
-    ~/.zsh/completion(N-/)
-    $fpath
-)
 
 setopt always_to_end
 setopt auto_cd
