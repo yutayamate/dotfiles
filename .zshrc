@@ -8,6 +8,7 @@ path=(
     ~/.opt/*/(s|)bin(N-/)
     ~/.local/(s|)bin(N-/)
     ~/.(s|)bin(N-/)
+    /opt/homebrew/opt/*/(s|)bin(N-/)
     /usr/local/opt/*/(s|)bin(N-/)
     /usr/local/(s|)bin(N-/)
     /opt/*/(s|)bin(N-/)
