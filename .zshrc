@@ -101,7 +101,7 @@ if [[ -d $ZPLUG_HOME ]]; then
     zplug load
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 fi
-alias zplug-install="git clone https://github.com/zplug/zplug $ZPLUG_HOME && source .zshrc"
+alias get-zplug="git clone https://github.com/zplug/zplug $ZPLUG_HOME && source .zshrc"
 
 command -v xclip > /dev/null 2>&1 && alias pbcopy="xclip -selection primary" && alias pbpaste="xclip -selection primary -o"
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
