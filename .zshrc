@@ -106,6 +106,7 @@ alias get-zplug='git clone https://github.com/zplug/zplug $ZPLUG_HOME && source 
 command -v xclip > /dev/null 2>&1 && alias pbcopy="xclip -selection primary" && alias pbpaste="xclip -selection primary -o"
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
 command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
+command -v rbenv > /dev/null 2>&1 && eval "$(rbenv init - zsh)"
 command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
