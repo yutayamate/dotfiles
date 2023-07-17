@@ -9,12 +9,19 @@ path=(
     ~/.local/(s|)bin(N-/)
     ~/.(s|)bin(N-/)
     /opt/homebrew/opt/*/(s|)bin(N-/)
+    /opt/homebrew/(s|)bin(N-/)
     /usr/local/opt/*/(s|)bin(N-/)
+    /usr/local/*/(s|)bin(N-/)
     /usr/local/(s|)bin(N-/)
     /opt/*/(s|)bin(N-/)
     /usr/(s|)bin(N-/)
     /(s|)bin(N-/)
     $path
+)
+fpath=(
+    /opt/homebrew/share/zsh/site-functions(N-/)
+    /usr/local/share/zsh/site-functions(N-/)
+    $fpath
 )
 
 setopt always_to_end
@@ -89,7 +96,6 @@ if [[ -d $ZPLUG_HOME ]]; then
     zplug "zsh-users/zsh-syntax-highlighting"
     zplug "zsh-users/zsh-autosuggestions"
     zplug "plugins/docker", from:oh-my-zsh
-    zplug "plugins/gcloud", from:oh-my-zsh
     zplug "yutayamate/bin", as:command, use:"bin/*"
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
@@ -107,10 +113,10 @@ command -v xclip > /dev/null 2>&1 && alias pbcopy="xclip -selection primary" && 
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
 command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init - zsh)"
 command -v rbenv > /dev/null 2>&1 && eval "$(rbenv init - zsh)"
-command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
-command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _ syft
+command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
+command -v grype > /dev/null 2>&1 && source <(grype completion zsh) && compdef _grype grype
 command -v gobuster > /dev/null 2>&1 && source <(gobuster completion zsh) && compdef _gobuster gobuster
 command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
 
