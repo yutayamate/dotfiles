@@ -3,7 +3,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 
 all: install
 
-install: xdg emacs git matploitlib tmux ssh vim sqlite screen zsh
+install: xdg emacs git matploitlib tmux ssh vim groovy sqlite screen zsh
 
 .PHONY: xdg
 xdg:
@@ -34,6 +34,11 @@ ssh:
 vim:
 	@mkdir -p ${HOME}/.vim
 	@ln -sinv ${PWD}/.vim/vimrc ${HOME}/.vim/vimrc
+
+.PHONY: groovy
+groovy:
+	@mkdir -p ${HOME}/.groovy
+	@ln -sinv ${PWD}/.groovy/groovysh.rc ${HOME}/.groovy/groovysh.rc
 
 .PHONY: sqlite
 sqlite:
