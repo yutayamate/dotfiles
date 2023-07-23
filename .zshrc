@@ -95,7 +95,6 @@ if [[ -d $ZPLUG_HOME ]]; then
     zplug "zsh-users/zsh-completions"
     zplug "zsh-users/zsh-syntax-highlighting"
     zplug "zsh-users/zsh-autosuggestions"
-    zplug "plugins/docker", from:oh-my-zsh
     zplug "yutayamate/bin", as:command, use:"bin/*"
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
