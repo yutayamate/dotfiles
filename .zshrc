@@ -3,6 +3,7 @@ export EDITOR=nano
 export PAGER=less
 
 typeset -U path
+typeset -U fpath
 path=(
     ~/.tools/*(N-/)
     ~/.opt/*/(s|)bin(N-/)
