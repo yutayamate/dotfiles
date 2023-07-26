@@ -5,7 +5,6 @@ export PAGER=less
 typeset -U path
 typeset -U fpath
 path=(
-    ~/.tools/*(N-/)
     ~/.opt/*/(s|)bin(N-/)
     ~/.local/(s|)bin(N-/)
     ~/.(s|)bin(N-/)
