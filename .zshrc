@@ -118,6 +118,7 @@ command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _sy
 command -v grype > /dev/null 2>&1 && source <(grype completion zsh) && compdef _grype grype
 command -v gobuster > /dev/null 2>&1 && source <(gobuster completion zsh) && compdef _gobuster gobuster
 command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
+command -v jc > /dev/null 2>&1 && source <(jc --zsh-comp) > /dev/null 2>&1
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
