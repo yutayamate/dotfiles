@@ -17,10 +17,6 @@ emacs:
 git:
 	@ln -sFinv ${PWD}/.config/git ${XDG_CONFIG_HOME}/git
 
-.PHONY: matploitlib
-matploitlib:
-	@ln -sFinv ${PWD}/.config/matplotlib ${XDG_CONFIG_HOME}/matplotlib
-
 .PHONY: tmux
 tmux:
 	@ln -sFinv ${PWD}/.config/tmux ${XDG_CONFIG_HOME}/tmux
