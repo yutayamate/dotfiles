@@ -92,9 +92,11 @@ ANTIDOTE_HOME=~/.antidote
 if [[ -d $ANTIDOTE_HOME ]]; then
     source $ANTIDOTE_HOME/antidote.zsh
     antidote load
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
     bindkey -M emacs '^P' history-substring-search-up
     bindkey -M emacs '^N' history-substring-search-down
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 fi
 alias antidote-get='git clone https://github.com/mattmc3/antidote.git $ANTIDOTE_HOME && source ~/.zshrc'
 
