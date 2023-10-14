@@ -88,25 +88,13 @@ else
 fi
 RPROMPT='%F{yellow}${vcs_info_msg_0_}'
 
-ZPLUG_HOME=~/.zplug
-if [[ -d $ZPLUG_HOME ]]; then
-    source $ZPLUG_HOME/init.zsh
-    zstyle ":zplug:tag" depth 1
-    zplug "zsh-users/zsh-completions"
-    zplug "zsh-users/zsh-syntax-highlighting"
-    zplug "zsh-users/zsh-autosuggestions"
-    zplug "yutayamate/bin", as:command, use:"bin/*"
-    # Install plugins if there are plugins that have not been installed
-    if ! zplug check --verbose; then
-        printf "Install? [y/N]: "
-        if read -q; then
-            echo; zplug install
-        fi
-    fi
-    zplug load
+ANTIDOTE_HOME=~/.antidote
+if [[ -d $ANTIDOTE_HOME ]]; then
+    source $ANTIDOTE_HOME/antidote.zsh
+    antidote load
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 fi
-alias get-zplug='git clone https://github.com/zplug/zplug $ZPLUG_HOME && source ~/$(basename ${(%):-%N})'
+alias get-antidote='git clone https://github.com/mattmc3/antidote.git $ANTIDOTE_HOME && source ~/.zshrc'
 
 command -v xclip > /dev/null 2>&1 && alias pbcopy="xclip -selection primary" && alias pbpaste="xclip -selection primary -o"
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
@@ -118,7 +106,6 @@ command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _sy
 command -v grype > /dev/null 2>&1 && source <(grype completion zsh) && compdef _grype grype
 command -v gobuster > /dev/null 2>&1 && source <(gobuster completion zsh) && compdef _gobuster gobuster
 command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
-command -v jc > /dev/null 2>&1 && source <(jc --zsh-comp) > /dev/null 2>&1
 
 test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh
 test -e ~/.zshrc.local && source ~/.zshrc.local
