@@ -3,7 +3,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 
 all: install
 
-install: xdg emacs git tmux ssh vim groovy sqlite screen zsh
+install: xdg emacs git tmux ssh vim groovy sqlite screen zsh sheldon
 
 .PHONY: xdg
 xdg:
@@ -47,6 +47,10 @@ screen:
 .PHONY: zsh
 zsh:
 	@ln -sinv ${PWD}/.zshrc ${HOME}/.zshrc
+
+.PHONY: sheldon
+sheldon:
+	@ln -sFinv ${PWD}/.config/sheldon ${XDG_CONFIG_HOME}/sheldon
 
 .PHONY: help
 help:
