@@ -94,7 +94,7 @@ if [[ -d $ANTIDOTE_HOME ]]; then
     antidote load
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 fi
-alias get-antidote='git clone https://github.com/mattmc3/antidote.git $ANTIDOTE_HOME && source ~/.zshrc'
+alias antidote-get='git clone https://github.com/mattmc3/antidote.git $ANTIDOTE_HOME && source ~/.zshrc'
 
 command -v xclip > /dev/null 2>&1 && alias pbcopy="xclip -selection primary" && alias pbpaste="xclip -selection primary -o"
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
