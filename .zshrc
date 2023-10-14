@@ -5,6 +5,7 @@ export PAGER=less
 typeset -U path
 typeset -U fpath
 path=(
+    ~/.cargo/(s|)bin(N-/)
     ~/.opt/*/(s|)bin(N-/)
     ~/.local/(s|)bin(N-/)
     ~/.(s|)bin(N-/)
@@ -88,18 +89,9 @@ else
 fi
 RPROMPT='%F{yellow}${vcs_info_msg_0_}'
 
-ANTIDOTE_HOME=~/.antidote
-if [[ -d $ANTIDOTE_HOME ]]; then
-    source $ANTIDOTE_HOME/antidote.zsh
-    antidote load
-    bindkey '^[[A' history-substring-search-up
-    bindkey '^[[B' history-substring-search-down
-    bindkey -M emacs '^P' history-substring-search-up
-    bindkey -M emacs '^N' history-substring-search-down
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
-fi
-alias antidote-get='git clone https://github.com/mattmc3/antidote.git $ANTIDOTE_HOME && source ~/.zshrc'
+alias cargo-binstall-get='curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
 
+command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh) && compdef _sheldon sheldon
 command -v xclip > /dev/null 2>&1 && alias pbcopy="xclip -selection primary" && alias pbpaste="xclip -selection primary -o"
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
 command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init - zsh)"

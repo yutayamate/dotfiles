@@ -47,7 +47,6 @@ screen:
 .PHONY: zsh
 zsh:
 	@ln -sinv ${PWD}/.zshrc ${HOME}/.zshrc
-	@ln -sinv ${PWD}/.zshrc ${HOME}/.zsh_plugins.txt
 
 .PHONY: help
 help:
