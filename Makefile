@@ -52,6 +52,10 @@ zsh:
 sheldon:
 	@ln -sFinv ${PWD}/.config/sheldon ${XDG_CONFIG_HOME}/sheldon
 
+.PHONY: zellij
+sheldon:
+	@ln -sFinv ${PWD}/.config/zellij ${XDG_CONFIG_HOME}/zellij
+
 .PHONY: help
 help:
 	@echo "Usage: make all | make install | make help"
