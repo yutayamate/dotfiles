@@ -92,7 +92,6 @@ RPROMPT='%F{yellow}${vcs_info_msg_0_}'
 alias cargo-binstall-get='curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
 
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh) && compdef _sheldon sheldon
-command -v xclip > /dev/null 2>&1 && alias pbcopy="xclip -selection primary" && alias pbpaste="xclip -selection primary -o"
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
 command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init - zsh)"
 command -v rbenv > /dev/null 2>&1 && eval "$(rbenv init - zsh)"
