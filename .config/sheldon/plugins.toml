@@ -36,17 +36,19 @@ apply = ["defer"]
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 apply = ["defer"]
-hooks.post = "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'"
+hooks.post = """
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+"""
 
 [plugins.zsh-history-substring-search]
 github = "zsh-users/zsh-history-substring-search"
 apply = ["defer"]
 hooks.post = """
-HISTORY_SUBSTRING_SEARCH_FUZZY=1
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
+    HISTORY_SUBSTRING_SEARCH_FUZZY=1
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+    bindkey -M emacs '^P' history-substring-search-up
+    bindkey -M emacs '^N' history-substring-search-down
 """
 
 [plugins.bin]
