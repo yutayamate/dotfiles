@@ -3,7 +3,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 
 all: install
 
-install: xdg emacs git tmux ssh vim groovy sqlite screen zsh sheldon zellij
+install: xdg git ssh vim sqlite zsh sheldon zellij
 
 .PHONY: xdg
 xdg:
@@ -53,8 +53,12 @@ sheldon:
 	@ln -sFinv ${PWD}/.config/sheldon ${XDG_CONFIG_HOME}/sheldon
 
 .PHONY: zellij
-sheldon:
+zellij:
 	@ln -sFinv ${PWD}/.config/zellij ${XDG_CONFIG_HOME}/zellij
+
+.PHONY: alacritty
+alacritty:
+	@ln -sFinv ${PWD}/.config/alacritty ${XDG_CONFIG_HOME}/alacritty
 
 .PHONY: help
 help:
