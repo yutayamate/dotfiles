@@ -914,7 +914,8 @@
 #  - /path/to/alacritty.yml
 
 import:
-  - ~/.config/alacritty/themes/blood_moon.yaml
+  - ~/.config/alacritty/themes/brogrammer.yaml
+  - ~/.config/alacritty/themes/solarized_dark_higher_contrast.yaml
 window:
   dynamic_title: true
   dimensions:
