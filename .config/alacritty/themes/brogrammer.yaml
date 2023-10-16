@@ -1,0 +1,28 @@
+# Colors (Blood Moon)
+colors:
+  # Default colors
+  primary:
+    background: '#191818'
+    foreground: '#dee1e9'
+
+  # Normal colors
+  normal:
+    black:   '#2a2929'
+    red:     '#fb2c1e'
+    green:   '#2fcb70'
+    yellow:  '#f1c30d'
+    blue:    '#3397da'
+    magenta: '#6170c3'
+    cyan:    '#0094dd'
+    white:   '#dee1e9'
+
+  # Bright colors
+  bright:
+    black:   '#dee1e9'
+    red:     '#e64b3b'
+    green:   '#07d673'
+    yellow:  '#f6c600'
+    blue:    '#0094dd'
+    magenta: '#6667c5'
+    cyan:    '#0091e1'
+    white:   '#fffefe'

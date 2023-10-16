@@ -1,0 +1,28 @@
+# Colors (Solarized Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#002833'
+    foreground: '#aacccd'
+
+  # Normal colors
+  normal:
+    black:   '#003440'
+    red:     '#db312f'
+    green:   '#7cc67f'
+    yellow:  '#b48800'
+    blue:    '#268ad1'
+    magenta: '#d23581'
+    cyan:    '#2aa097'
+    white:   '#eee7d4'
+
+  # Bright colors
+  bright:
+    black:   '#00779a'
+    red:     '#f9314b'
+    green:   '#5bee96'
+    yellow:  '#c08f34'
+    blue:    '#119fd2'
+    magenta: '#e9679f'
+    cyan:    '#00bdae'
+    white:   '#fdf5e2'
