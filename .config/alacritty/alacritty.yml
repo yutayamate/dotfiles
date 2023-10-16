@@ -914,8 +914,10 @@
 #  - /path/to/alacritty.yml
 
 import:
-  # - ~/.config/alacritty/themes/brogrammer.yaml
-  - ~/.config/alacritty/themes/solarized_dark_higher_contrast.yaml
+  - ~/.config/alacritty/themes/brogrammer.yaml
+  # - ~/.config/alacritty/themes/solarized_dark_higher_contrast.yaml
+env:
+  TERM: xterm-256color
 window:
   dynamic_title: true
   dimensions:
