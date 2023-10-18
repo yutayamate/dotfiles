@@ -91,6 +91,7 @@ RPROMPT='%F{yellow}${vcs_info_msg_0_}'
 
 alias cargo-binstall-get='curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
 
+command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true && eval "$(zellij setup --generate-auto-start zsh)"
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh) && compdef _sheldon sheldon
 command -v rtx > /dev/null 2>&1 && eval "$(rtx activate zsh)" && source <(rtx completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
