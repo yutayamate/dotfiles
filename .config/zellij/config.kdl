@@ -330,5 +330,5 @@ simplified_ui true
 // theme_dir "/path/to/my/theme_dir"
 
 env {
-    TEAM "xterm-256color"
+    TERM "xterm-256color"
 }
