@@ -95,6 +95,7 @@ command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true && eval "$(
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh) && compdef _sheldon sheldon
 command -v rtx > /dev/null 2>&1 && eval "$(rtx activate zsh)" && source <(rtx completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
+command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
 command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
