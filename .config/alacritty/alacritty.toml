@@ -1,0 +1,33 @@
+import = [
+    "/Users/yuta.a.yamate/.config/alacritty/themes/brogrammer.toml",
+    # "/Users/yuta.a.yamate/.config/alacritty/themes/solarized_dark_higher_contrast.toml"
+]
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.normal]
+style = "Bold"
+
+[window]
+dynamic_title = true
+opacity = 1.0
+option_as_alt = "Both"
+
+[window.dimensions]
+columns = 160
+lines = 50
+
+[window.padding]
+x = 4
+y = 3
