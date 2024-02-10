@@ -27,22 +27,22 @@ github = "romkatv/zsh-defer"
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
-apply = ["defer"]
+# apply = ["defer"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
-apply = ["defer"]
+# apply = ["defer"]
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
-apply = ["defer"]
+# apply = ["defer"]
 hooks.post = """
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 """
 
 [plugins.zsh-history-substring-search]
 github = "zsh-users/zsh-history-substring-search"
-apply = ["defer"]
+# apply = ["defer"]
 hooks.post = """
     HISTORY_SUBSTRING_SEARCH_FUZZY=1
     bindkey '^[[A' history-substring-search-up
