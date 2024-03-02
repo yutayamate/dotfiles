@@ -100,6 +100,7 @@ command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
 command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
 command -v grype > /dev/null 2>&1 && source <(grype completion zsh) && compdef _grype grype
+command -v trivy > /dev/null 2>&1 && source <(trivy completion zsh)
 command -v gobuster > /dev/null 2>&1 && source <(gobuster completion zsh) && compdef _gobuster gobuster
 command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
 
