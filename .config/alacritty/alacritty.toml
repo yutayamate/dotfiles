@@ -22,7 +22,7 @@ style = "Bold"
 [window]
 blur = false
 dynamic_title = true
-opacity = 1
+# opacity = 0.85
 option_as_alt = "Both"
 
 [window.dimensions]
