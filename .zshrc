@@ -91,7 +91,6 @@ RPROMPT='%F{yellow}${vcs_info_msg_0_}'
 
 alias cargo-binstall-get='curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
 
-command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true && eval "$(zellij setup --generate-auto-start zsh)"
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh)
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
@@ -103,5 +102,8 @@ command -v grype > /dev/null 2>&1 && source <(grype completion zsh) && compdef _
 command -v trivy > /dev/null 2>&1 && source <(trivy completion zsh)
 command -v gobuster > /dev/null 2>&1 && source <(gobuster completion zsh) && compdef _gobuster gobuster
 command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
+if [[ $TERM_PROGRAM != "vscode" ]]; then
+  command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true && eval "$(zellij setup --generate-auto-start zsh)"
+fi
 
 test -e ~/.zshrc.local && source ~/.zshrc.local
