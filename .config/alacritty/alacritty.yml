@@ -16,7 +16,7 @@ font:
 window:
   blur: false
   dynamic_title: true
-  opacity: 0.85
+  opacity: 0.90
   option_as_alt: Both
   dimensions:
     columns: 160
