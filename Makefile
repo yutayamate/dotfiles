@@ -3,7 +3,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 
 all: install
 
-install: xdg git ssh vim sqlite zsh sheldon zellij
+install: xdg git ssh vim sqlite zsh sheldon zellij alacritty
 
 .PHONY: xdg
 xdg:
