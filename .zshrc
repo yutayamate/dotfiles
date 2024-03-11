@@ -88,7 +88,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
     prompt fade blue && setopt prompt_sp
 fi
-RPROMPT='%F{yellow}${vcs_info_msg_0_}'
+RPS1='%F{yellow}${vcs_info_msg_0_}'
 
 alias cargo-binstall-get='curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
 
