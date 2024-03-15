@@ -1,5 +1,6 @@
 # CodeWhisperer pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
+
 export LANG=en_US.UTF-8
 export EDITOR=nano
 export PAGER=less
