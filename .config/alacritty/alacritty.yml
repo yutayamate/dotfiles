@@ -1,7 +1,6 @@
 import:
   - ~/.config/alacritty/themes/brogrammer.yml
   # - ~/.config/alacritty/themes/solarized_dark_higher_contrast.yml
-  - ~/.config/alacritty/alacritty.yml.local
 colors:
   draw_bold_text_with_bright_colors: true
 cursor:
