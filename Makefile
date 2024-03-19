@@ -1,9 +1,10 @@
+OS := $(shell uname -s)
 XDG_CONFIG_HOME ?= ${HOME}/.config
 .DEFAULT_GOAL := help
 
 all: install
 
-install: xdg git ssh vim sqlite zsh sheldon zellij alacritty
+install: xdg git ssh vim zsh sheldon zellij alacritty
 
 .PHONY: xdg
 xdg:
@@ -59,6 +60,9 @@ zellij:
 .PHONY: alacritty
 alacritty:
 	@ln -sFinv ${PWD}/.config/alacritty ${XDG_CONFIG_HOME}/alacritty
+ifeq ($(OS),Linux)
+	@ln -sFinv ${PWD}/.config/alacritty/alacritty.linux.yml ${XDG_CONFIG_HOME}/alacritty/alacritty.yml
+endif
 
 .PHONY: help
 help:
