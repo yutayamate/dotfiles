@@ -1,5 +1,6 @@
 brew "fzf"
 brew "jc"
+brew "jnv"
 brew "jq"
 brew "mise"
 brew "p7zip"
