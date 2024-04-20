@@ -61,7 +61,7 @@ zellij:
 alacritty:
 	@ln -sFinv ${PWD}/.config/alacritty ${XDG_CONFIG_HOME}/alacritty
 ifeq ($(OS),Linux)
-	@ln -sFinv ${PWD}/.config/alacritty/alacritty.linux.yml ${XDG_CONFIG_HOME}/alacritty/alacritty.yml
+	@ln -sFinvf ${PWD}/.config/alacritty/alacritty.linux.yml ${XDG_CONFIG_HOME}/alacritty/alacritty.yml
 endif
 
 .PHONY: help
