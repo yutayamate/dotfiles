@@ -96,6 +96,7 @@ command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(shel
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse"
 command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
+command -v vctl > /dev/null 2>&1 && source <(vctl completion zsh) && compdef _vctl vctl
 command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
 command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
