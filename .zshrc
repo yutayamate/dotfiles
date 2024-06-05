@@ -90,7 +90,7 @@ else
     prompt fade blue && setopt prompt_sp
 fi
 
-function get_tun_info() {
+function tun_info() {
     local number
     number=$(
         ifconfig | grep -E "^(tun|utun)[0-9]+" -A2 | \
@@ -102,7 +102,7 @@ function get_tun_info() {
         tun_info_msg="[tun:enabled]"
     fi
 }
-add-zsh-hook precmd get_tun_info
+add-zsh-hook precmd tun_info
 RPS1='%F{yellow}${vcs_info_msg_0_}${tun_info_msg}'
 
 alias cargo-binstall-get='mkdir -p ~/.cargo/bin && curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
