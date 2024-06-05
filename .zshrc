@@ -83,12 +83,25 @@ case "$OSTYPE" in
         ;;
 esac
 
+function tun_info() {
+    local number
+    number=$(
+        ifconfig | grep -E "^(tun|utun)[0-9]+" -A2 | \
+        awk '{ if (NR%3) ORS=","; else ORS="\n"; print; }' | \
+        grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' | \
+        wc -l
+    )
+    if [[ $number -gt 0 ]]; then
+        echo "[tun:enabled]"
+    fi
+}
+
 if [[ -n $SSH_CONNECTION ]]; then
     prompt fade red && setopt prompt_sp
 else
     prompt fade blue && setopt prompt_sp
 fi
-RPS1='%F{yellow}${vcs_info_msg_0_}'
+RPS1='%F{yellow}${vcs_info_msg_0_}$(tun_info)'
 
 alias cargo-binstall-get='mkdir -p ~/.cargo/bin && curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
 
