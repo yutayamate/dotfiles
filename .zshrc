@@ -57,6 +57,7 @@ autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
 autoload -Uz vcs_info && precmd () { vcs_info }
+autoload -Uz add-zsh-hook
 
 bindkey -e
 bindkey "^p" history-beginning-search-backward
@@ -83,7 +84,13 @@ case "$OSTYPE" in
         ;;
 esac
 
-function tun_info() {
+if [[ -n $SSH_CONNECTION ]]; then
+    prompt fade red && setopt prompt_sp
+else
+    prompt fade blue && setopt prompt_sp
+fi
+
+function get_tun_info() {
     local number
     number=$(
         ifconfig | grep -E "^(tun|utun)[0-9]+" -A2 | \
@@ -92,16 +99,11 @@ function tun_info() {
         wc -l
     )
     if [[ $number -gt 0 ]]; then
-        echo "[tun:enabled]"
+        tun_info_msg="[tun:enabled]"
     fi
 }
-
-if [[ -n $SSH_CONNECTION ]]; then
-    prompt fade red && setopt prompt_sp
-else
-    prompt fade blue && setopt prompt_sp
-fi
-RPS1='%F{yellow}${vcs_info_msg_0_}$(tun_info)'
+add-zsh-hook precmd get_tun_info
+RPS1='%F{yellow}${vcs_info_msg_0_}${tun_info_msg}'
 
 alias cargo-binstall-get='mkdir -p ~/.cargo/bin && curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
 
