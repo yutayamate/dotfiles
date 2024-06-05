@@ -92,6 +92,7 @@ fi
 
 function tun_info() {
     local number
+    tun_info_msg=
     number=$(
         ifconfig | grep -E "^(tun|utun)[0-9]+" -A2 | \
         awk '{ if (NR % 3) ORS=","; else ORS="\n"; print; }' | \
