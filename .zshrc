@@ -87,7 +87,7 @@ function tun_info() {
     local number
     number=$(
         ifconfig | grep -E "^(tun|utun)[0-9]+" -A2 | \
-        awk '{ if (NR%3) ORS=","; else ORS="\n"; print; }' | \
+        awk '{ if (NR % 3) ORS=","; else ORS="\n"; print; }' | \
         grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' | \
         wc -l
     )
