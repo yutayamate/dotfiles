@@ -57,7 +57,7 @@ autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
-autoload -Uz vcs_info && add-zsh-hook precmd vcs_info
+autoload -Uz vcs_info
 
 bindkey -e
 bindkey "^p" history-beginning-search-backward
@@ -69,6 +69,7 @@ zstyle ":vcs_info:*" formats "[%b]"
 zstyle ":vcs_info:*" actionformats "[%b|%a]"
 zstyle ":vcs_info:git:*" check-for-changes false
 
+add-zsh-hook precmd vcs_info
 add-zsh-hook precmd tun_info() {
     local _addr_num
     tun_info_msg=
