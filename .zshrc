@@ -69,8 +69,7 @@ zstyle ":vcs_info:*" formats "[%b]"
 zstyle ":vcs_info:*" actionformats "[%b|%a]"
 zstyle ":vcs_info:git:*" check-for-changes false
 
-add-zsh-hook precmd vcs_info
-add-zsh-hook precmd tun_info() {
+function tun_info() {
     local _addr_num
     tun_info_msg=
     _addr_num=$(
@@ -84,6 +83,8 @@ add-zsh-hook precmd tun_info() {
         tun_info_msg="[tun:enabled]"
     fi
 }
+add-zsh-hook precmd vcs_info
+add-zsh-hook precmd tun_info
 
 if [[ -n $SSH_CONNECTION ]]; then
     prompt fade red && setopt prompt_sp
