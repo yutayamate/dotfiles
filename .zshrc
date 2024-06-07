@@ -57,17 +57,25 @@ autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
-autoload -Uz vcs_info
+autoload -Uz vcs_info && add-zsh-hook precmd vcs_info
 
 bindkey -e
 bindkey "^p" history-beginning-search-backward
 bindkey "^n" history-beginning-search-forward
 
 zstyle ":completion:*:default" menu select=2
+zstyle ":completion:*:commands" rehash 1
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
 zstyle ":vcs_info:*" formats "[%b]"
 zstyle ":vcs_info:*" actionformats "[%b|%a]"
 zstyle ":vcs_info:git:*" check-for-changes false
+
+if [[ -z $SSH_CONNECTION ]]; then
+    prompt fade blue
+else
+    prompt fade red
+fi
+setopt prompt_sp
 
 function tun_info() {
     local _addr_num
@@ -83,14 +91,7 @@ function tun_info() {
         tun_info_msg="[tun:enabled]"
     fi
 }
-add-zsh-hook precmd vcs_info
 add-zsh-hook precmd tun_info
-
-if [[ -n $SSH_CONNECTION ]]; then
-    prompt fade red && setopt prompt_sp
-else
-    prompt fade blue && setopt prompt_sp
-fi
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
