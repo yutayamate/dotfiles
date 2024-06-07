@@ -52,12 +52,12 @@ setopt pushd_ignore_dups
 setopt share_history
 setopt transient_rprompt
 
+autoload -Uz add-zsh-hook
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
-autoload -Uz vcs_info && precmd () { vcs_info }
-autoload -Uz add-zsh-hook
+autoload -Uz vcs_info && add-zsh-hook precmd vcs_info
 
 bindkey -e
 bindkey "^p" history-beginning-search-backward
@@ -69,28 +69,7 @@ zstyle ":vcs_info:*" formats "[%b]"
 zstyle ":vcs_info:*" actionformats "[%b|%a]"
 zstyle ":vcs_info:git:*" check-for-changes false
 
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-
-alias grep="grep --color=auto"
-case "$OSTYPE" in
-    darwin*)
-        alias ls="ls -G"
-        # alias tar="COPYFILE_DISABLE=1 tar"
-        ;;
-    linux*)
-        alias ls="ls --color=auto"
-        ;;
-esac
-
-if [[ -n $SSH_CONNECTION ]]; then
-    prompt fade red && setopt prompt_sp
-else
-    prompt fade blue && setopt prompt_sp
-fi
-
-function tun_info() {
+add-zsh-hook precmd tun_info() {
     local _addr_num
     tun_info_msg=
     _addr_num=$(
@@ -104,10 +83,29 @@ function tun_info() {
         tun_info_msg="[tun:enabled]"
     fi
 }
-add-zsh-hook precmd tun_info
+
+if [[ -n $SSH_CONNECTION ]]; then
+    prompt fade red && setopt prompt_sp
+else
+    prompt fade blue && setopt prompt_sp
+fi
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 RPS1='%F{yellow}${vcs_info_msg_0_}${tun_info_msg}'
 
+alias grep="grep --color=auto"
 alias cargo-binstall-get='mkdir -p ~/.cargo/bin && curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
+case "$OSTYPE" in
+    darwin*)
+        alias ls="ls -G"
+        # alias tar="COPYFILE_DISABLE=1 tar"
+        ;;
+    linux*)
+        alias ls="ls --color=auto"
+        ;;
+esac
 
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh)
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
