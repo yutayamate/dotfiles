@@ -1,6 +1,7 @@
 export LANG=en_US.UTF-8
 export EDITOR=nano
 export PAGER=less
+export LESS="-R"
 
 typeset -U path
 typeset -U fpath
@@ -98,17 +99,18 @@ HISTSIZE=10000
 SAVEHIST=10000
 RPS1='%F{yellow}${vcs_info_msg_0_}${tun_info_msg}'
 
+alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias cargo-binstall-get='mkdir -p ~/.cargo/bin && curl -L --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && source ~/.zshrc'
-case "$OSTYPE" in
-    darwin*)
-        alias ls="ls -G"
-        # alias tar="COPYFILE_DISABLE=1 tar"
-        ;;
-    linux*)
-        alias ls="ls --color=auto"
-        ;;
-esac
+# case "$OSTYPE" in
+#     darwin*)
+#         alias ls="ls -G"
+#         # alias tar="COPYFILE_DISABLE=1 tar"
+#         ;;
+#     linux*)
+#         alias ls="ls --color=auto"
+#         ;;
+# esac
 
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh)
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
