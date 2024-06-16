@@ -1,7 +1,7 @@
 export LANG=en_US.UTF-8
 export EDITOR=nano
 export PAGER=less
-export LESS="-R"
+export LESS="-MR"
 
 typeset -U path
 typeset -U fpath
