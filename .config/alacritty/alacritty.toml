@@ -1,6 +1,6 @@
 import = [
-    "~/.config/alacritty/themes/brogrammer.toml",
-    # "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml"
+    # "~/.config/alacritty/themes/brogrammer.toml",
+    "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml"
 ]
 
 [colors]
@@ -20,9 +20,9 @@ size = 12.0
 style = "Bold"
 
 [window]
-blur = false
+blur = true
 dynamic_title = true
-# opacity = 0.90
+opacity = 0.75
 option_as_alt = "Both"
 
 [window.dimensions]
