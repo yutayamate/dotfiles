@@ -12,10 +12,10 @@ env:
 font:
   # size: 12.0
   size: 10.0
-  normal:
-    style: Bold
+  # normal:
+  #   style: Bold
 window:
-  blur: false
+  blur: true
   dynamic_title: true
   # opacity: 0.90
   option_as_alt: Both
