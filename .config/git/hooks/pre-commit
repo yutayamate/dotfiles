@@ -4,5 +4,5 @@ if command -v gitleaks > /dev/null 2>&1; then
     $(dirname $0)/pre-commit.d/gitleaks.py
 else
     echo 'Warning: "gitleaks" is not installed, skipping the pre-commit hook.' >&2
-    exit 0
 fi
+printf '\n'
