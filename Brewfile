@@ -1,4 +1,5 @@
 brew "fzf"
+brew "gitleaks"
 brew "jc"
 brew "jnv"
 brew "jq"
