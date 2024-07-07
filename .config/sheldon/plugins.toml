@@ -55,3 +55,8 @@ hooks.post = """
 github = "yutayamate/bin"
 dir = "bin"
 apply = ["path"]
+
+[plugins.prompt_kali_setup]
+gist = "01c97490a7c9597aa5da8a425fca1178"
+use = ["*"]
+apply = ["source"]
