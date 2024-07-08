@@ -56,7 +56,10 @@ github = "yutayamate/bin"
 dir = "bin"
 apply = ["path"]
 
-[plugins.prompt_kali_setup]
-gist = "01c97490a7c9597aa5da8a425fca1178"
-use = ["*"]
+[plugins.zsh-prompt-setup]
+github = "yutayamate/dotfiles"
 apply = ["source"]
+hooks.post = """
+    prompt_themes+=kali && prompt kali
+    RPS1='%F{yellow}${vcs_info_msg_0_}${tun_info_msg}'
+"""
