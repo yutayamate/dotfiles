@@ -60,6 +60,7 @@ apply = ["path"]
 github = "yutayamate/dotfiles"
 apply = ["source"]
 hooks.post = """
-    prompt_themes+=kali && prompt kali
+    prompt_themes+=(kali)
+    prompt kali
     RPS1='%F{yellow}${vcs_info_msg_0_}${tun_info_msg}'
 """
