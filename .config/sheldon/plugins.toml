@@ -56,8 +56,9 @@ github = "yutayamate/bin"
 dir = "bin"
 apply = ["path"]
 
-[plugins.zsh-prompt-setup]
+[plugins.dotfiles]
 github = "yutayamate/dotfiles"
+use = [".zshrc.d/*.zsh"]
 apply = ["source"]
 hooks.post = """
     prompt_themes+=(kali)
