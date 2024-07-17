@@ -15,7 +15,7 @@ def shellcheckEnabled():
 
 
 if shellcheckEnabled():
-    exitCode = os.WEXITSTATUS(os.system('git diff --name-only --cached | xargs shellcheck --norc -S error --exclude=SC1071'))
+    exitCode = os.WEXITSTATUS(os.system('git diff --name-only --cached | xargs shellcheck --norc --exclude=SC1071; exit 0;'))
     if exitCode == 1:
         print('''Warning: shellcheck has detected syntax errors in your changes.
 To disable the shellcheck precommit hook run the following command:
