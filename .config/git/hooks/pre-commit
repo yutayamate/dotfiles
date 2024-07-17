@@ -1,5 +1,12 @@
 #!/bin/sh
 
+set -e
+
+if command -v shellcheck > /dev/null 2>&1; then
+    $(dirname $0)/scripts/shellcheck.py
+else
+    echo 'Warning: "shellcheck" is not installed, skipping the pre-commit hook.' >&2
+fi
 if command -v gitleaks > /dev/null 2>&1; then
     $(dirname $0)/scripts/gitleaks.py
 else
