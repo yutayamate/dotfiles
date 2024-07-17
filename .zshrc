@@ -99,7 +99,7 @@ command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _sy
 command -v grype > /dev/null 2>&1 && source <(grype completion zsh) && compdef _grype grype
 command -v trivy > /dev/null 2>&1 && source <(trivy completion zsh)
 command -v gobuster > /dev/null 2>&1 && source <(gobuster completion zsh) && compdef _gobuster gobuster
-command -v gitleaks > /dev/null 2>&1 && source <(gitleaks completion zsh) # && compdef _gobuster gobuster
+command -v gitleaks > /dev/null 2>&1 && source <(gitleaks completion zsh)
 command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
 if [[ -z $SSH_CONNECTION && $TERM_PROGRAM != "vscode" ]]; then
   command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true && export ZELLIJ_AUTO_EXIT=true && eval "$(zellij setup --generate-auto-start zsh)"
