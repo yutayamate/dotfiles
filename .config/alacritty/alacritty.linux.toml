@@ -19,7 +19,7 @@ WINIT_X11_SCALE_FACTOR = "2.0"
 size = 10.0
 
 [font.normal]
-# style = "Bold"
+style = "Bold"
 
 [window]
 blur = true
