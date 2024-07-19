@@ -1,6 +1,6 @@
 import = [
-    "~/.config/alacritty/themes/alacritty_0_12.toml",
-    # "~/.config/alacritty/themes/brogrammer.toml",
+    # "~/.config/alacritty/themes/alacritty_0_12.toml",
+    "~/.config/alacritty/themes/brogrammer.toml",
     # "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml"
 ]
 
