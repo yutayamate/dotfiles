@@ -22,7 +22,7 @@ style = "Bold"
 
 [window]
 blur = true
-startup_mode = "Maximized"
+startup_mode = "Windowed"
 dynamic_title = true
 # opacity = 0.85
 option_as_alt = "Both"
