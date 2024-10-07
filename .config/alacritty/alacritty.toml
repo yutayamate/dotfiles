@@ -24,7 +24,7 @@ style = "Bold"
 blur = true
 startup_mode = "Windowed"
 dynamic_title = true
-opacity = 0.8
+# opacity = 0.8
 option_as_alt = "Both"
 
 [window.dimensions]
