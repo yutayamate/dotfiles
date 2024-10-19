@@ -1,7 +1,8 @@
 import = [
     # "~/.config/alacritty/themes/alacritty_0_12.toml",
-    "~/.config/alacritty/themes/brogrammer.toml",
-    # "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml"
+    # "~/.config/alacritty/themes/brogrammer.toml",
+    # "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml",
+    "~/.config/alacritty/themes/github_dark_default.toml"
 ]
 
 [colors]
@@ -19,10 +20,11 @@ WINIT_X11_SCALE_FACTOR = "2.0"
 size = 10.0
 
 [font.normal]
-style = "Bold"
+style = "Regular"
 
 [window]
 blur = true
+startup_mode = "Windowed"
 dynamic_title = true
 # opacity = 0.85
 option_as_alt = "Both"

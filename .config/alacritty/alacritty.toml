@@ -1,7 +1,8 @@
 import = [
     # "~/.config/alacritty/themes/alacritty_0_12.toml",
-    "~/.config/alacritty/themes/brogrammer.toml",
-    # "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml"
+    # "~/.config/alacritty/themes/brogrammer.toml",
+    # "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml",
+    "~/.config/alacritty/themes/github_dark_default.toml"
 ]
 
 [colors]
@@ -18,7 +19,7 @@ TERM = "xterm-256color"
 size = 12.0
 
 [font.normal]
-style = "Bold"
+style = "Regular"
 
 [window]
 blur = true
