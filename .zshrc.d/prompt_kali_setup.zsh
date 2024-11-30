@@ -65,8 +65,8 @@ prompt_kali_setup() {
         configure_prompt
 
         # enable syntax-highlighting
-        # if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-        #     . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+            . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
             ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
             ZSH_HIGHLIGHT_STYLES[default]=none
             ZSH_HIGHLIGHT_STYLES[unknown-token]=underline
@@ -109,7 +109,7 @@ prompt_kali_setup() {
             ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
             ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
             ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
-        # fi
+        fi
     else
         PROMPT='${debian_chroot:+($debian_chroot)}%n@%m:%~%(#.#.$) '
     fi
