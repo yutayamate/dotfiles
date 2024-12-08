@@ -1,4 +1,4 @@
 .DS_Store
 id_rsa
 .vscode
-alacritty.toml
+.config/alacritty/alacritty.toml
