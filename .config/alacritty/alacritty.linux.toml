@@ -1,3 +1,11 @@
+import = [
+    # "~/.config/alacritty/themes/alacritty_0_12.toml",
+    "~/.config/alacritty/themes/brogrammer.toml",
+    # "~/.config/alacritty/themes/github_dark_default.toml",
+    # "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml",
+    # "~/.config/alacritty/themes/ubuntu.toml",
+]
+
 [colors]
 draw_bold_text_with_bright_colors = true
 
@@ -7,7 +15,7 @@ shape = "Block"
 
 [env]
 TERM = "xterm-256color"
-WINIT_X11_SCALE_FACTOR = "2.0"
+# WINIT_X11_SCALE_FACTOR = "2.0"
 
 [font]
 size = 10.0
@@ -31,12 +39,3 @@ lines = 50
 [window.padding]
 x = 4
 y = 4
-
-[general]
-import = [
-    # "~/.config/alacritty/themes/alacritty_0_12.toml",
-    "~/.config/alacritty/themes/brogrammer.toml",
-    # "~/.config/alacritty/themes/github_dark_default.toml",
-    # "~/.config/alacritty/themes/solarized_dark_higher_contrast.toml",
-    # "~/.config/alacritty/themes/ubuntu.toml",
-]
