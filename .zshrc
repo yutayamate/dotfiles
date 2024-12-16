@@ -89,6 +89,7 @@ alias cargo-binstall-get='mkdir -p ~/.cargo/bin && curl -L --proto "=https" --tl
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh)
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPLETION_TRIGGER="~~" FZF_COMPLETION_OPTS="--border --info=inline" && source <(fzf --zsh)
+command -v docker > /dev/null 2>&1 && source <(docker completion zsh)
 command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 command -v orbctl > /dev/null 2>&1 && source <(orbctl completion zsh) && compdef _orb orb
 command -v vctl > /dev/null 2>&1 && [ $(uname -m) = "amd64" ] && source <(vctl completion zsh) && compdef _vctl vctl
