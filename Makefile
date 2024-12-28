@@ -4,7 +4,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 
 all: install
 
-install: xdg git ssh vim zsh sheldon zellij alacritty
+install: xdg git ssh vim zsh sheldon zellij ghostty alacritty
 
 .PHONY: xdg
 xdg:
@@ -56,6 +56,10 @@ sheldon:
 .PHONY: zellij
 zellij:
 	@ln -sFinv ${PWD}/.config/zellij ${XDG_CONFIG_HOME}/zellij
+
+.PHONY: ghostty
+ghostty:
+	@ln -sFinv ${PWD}/.config/ghostty ${XDG_CONFIG_HOME}/ghostty
 
 .PHONY: alacritty
 alacritty:
