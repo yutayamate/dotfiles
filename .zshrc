@@ -105,4 +105,8 @@ if [[ -z $SSH_CONNECTION && $TERM_PROGRAM != "vscode" ]]; then
   command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true ZELLIJ_AUTO_EXIT=true && eval "$(zellij setup --generate-auto-start zsh)"
 fi
 
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source $GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration
+fi
+
 test -e ~/.zshrc.local && source ~/.zshrc.local
