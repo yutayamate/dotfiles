@@ -55,13 +55,16 @@ setopt transient_rprompt
 autoload -Uz add-zsh-hook
 autoload -Uz colors && colors
 autoload -Uz compinit && compinit
+autoload -Uz history-search-end
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
 autoload -Uz vcs_info && add-zsh-hook precmd vcs_info
 
 bindkey -e
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^n" history-beginning-search-forward-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
 
 zstyle ":completion:*:default" menu select=2
 zstyle ":completion:*:commands" rehash 1
