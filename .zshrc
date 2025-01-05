@@ -58,6 +58,8 @@ autoload -Uz compinit && compinit
 autoload -Uz history-search-end
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
+autoload -Uz tetris
+autoload -Uz tetriscurses
 autoload -Uz vcs_info && add-zsh-hook precmd vcs_info
 
 bindkey -e
