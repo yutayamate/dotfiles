@@ -47,7 +47,11 @@ apply = ["path"]
 
 [plugins.dotfiles]
 github = "yutayamate/dotfiles"
-use = [".zshrc.d/*.zsh"]
+use = [
+    ".zshrc.d/music_info.zsh",
+    ".zshrc.d/prompt_kali_setup.zsh",
+    ".zshrc.d/tun_info.zsh"
+]
 apply = ["source"]
 hooks.post = """
     prompt_themes+=(kali)
