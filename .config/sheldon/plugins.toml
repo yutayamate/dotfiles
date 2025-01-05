@@ -52,5 +52,5 @@ apply = ["source"]
 hooks.post = """
     prompt_themes+=(kali)
     prompt kali
-    RPS1='%F{yellow}${vcs_info_msg_0_}${tun_info_msg}'
+    RPS1='%F{yellow}${music_info_msg}${vcs_info_msg_0_}${tun_info_msg}'
 """
