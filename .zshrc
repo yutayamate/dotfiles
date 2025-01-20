@@ -96,7 +96,8 @@ command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPLETION_TRIGGER="~~" FZF_COMPLETION_OPTS="--border --info=inline" && source <(fzf --zsh)
 command -v docker > /dev/null 2>&1 && source <(docker completion zsh)
 command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
-command -v orbctl > /dev/null 2>&1 && source <(orbctl completion zsh) && compdef _orb orb
+command -v orbctl > /dev/null 2>&1 && source <(orbctl completion zsh) && compdef _orbctl orbctl
+command -v orb > /dev/null 2>&1 && source <(orb completion zsh) && compdef _orb orb
 command -v vctl > /dev/null 2>&1 && [ $(uname -m) = "amd64" ] && source <(vctl completion zsh) && compdef _vctl vctl
 command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
