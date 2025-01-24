@@ -75,11 +75,8 @@ zstyle ":vcs_info:*" formats "[%b]"
 zstyle ":vcs_info:*" actionformats "[%b|%a]"
 zstyle ":vcs_info:git:*" check-for-changes false
 
-if [[ -z $SSH_CONNECTION ]]; then
-    prompt fade blue
-else
-    prompt fade red
-fi
+prompt restore
+setopt prompt_cr
 setopt prompt_sp
 
 HISTFILE=~/.zsh_history
