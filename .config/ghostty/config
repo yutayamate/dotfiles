@@ -5,7 +5,6 @@ font-thicken = true
 font-size = 12
 foreground = #d6dbe5
 macos-option-as-alt = true
-shell-integration-features = no-cursor
 theme = GitHub Dark
 # theme = Solarized Dark Higher Contrast
 window-width = 160
