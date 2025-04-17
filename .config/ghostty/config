@@ -6,6 +6,6 @@ font-size = 12
 foreground = #d6dbe5
 macos-option-as-alt = true
 shell-integration-features = no-cursor
-theme = Brogrammer
+theme = GitHub Dark
 window-width = 160
 window-height = 50
