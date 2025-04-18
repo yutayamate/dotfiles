@@ -1,4 +1,4 @@
-export LANG=en_US.UTF-8
+export LANG=C
 export EDITOR=nano
 export PAGER=less
 
