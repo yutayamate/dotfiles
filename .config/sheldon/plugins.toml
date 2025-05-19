@@ -48,6 +48,7 @@ apply = ["path"]
 [plugins.dotfiles]
 github = "yutayamate/dotfiles"
 use = [
+    ".zshrc.d/colima_info.zsh",
     ".zshrc.d/music_info.zsh",
     ".zshrc.d/prompt_kali_setup.zsh",
     ".zshrc.d/tun_info.zsh"
@@ -56,5 +57,5 @@ apply = ["source"]
 hooks.post = """
     prompt_themes+=(kali)
     prompt kali
-    RPS1='%F{cyan}${music_info_msg}%f%F{magenta}${tun_info_msg}%f%F{yellow}${vcs_info_msg_0_}%f'
+    RPS1='%F{cyan}${music_info_msg}%f%F{magenta}${colima_info_msg}%f%F{magenta}${tun_info_msg}%f%F{yellow}${vcs_info_msg_0_}%f'
 """
