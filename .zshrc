@@ -96,6 +96,7 @@ command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 command -v orbctl > /dev/null 2>&1 && source <(orbctl completion zsh) && compdef _orbctl orbctl
 command -v orb > /dev/null 2>&1 && source <(orb completion zsh) && compdef _orb orb
 command -v vctl > /dev/null 2>&1 && [ $(uname -m) = "amd64" ] && source <(vctl completion zsh) && compdef _vctl vctl
+command -v colima > /dev/null 2>&1 && source <(colima completion zsh)
 command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
 command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
