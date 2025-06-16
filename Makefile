@@ -4,7 +4,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 
 all: install
 
-install: xdg git ssh vim zsh sheldon zellij ghostty alacritty
+install: xdg git ssh vim zsh sheldon zellij ghostty alacritty aws
 
 .PHONY: xdg
 xdg:
@@ -69,6 +69,11 @@ ifeq ($(OS),Darwin)
 else ifeq ($(OS),Linux)
 	@ln -sFinvf ${PWD}/.config/alacritty/alacritty.linux.toml ${XDG_CONFIG_HOME}/alacritty/alacritty.toml
 endif
+
+.PHONY: aws
+aws:
+	@mkdir -p ${HOME}/.aws
+	@ln -sinv ${PWD}/.aws/config ${HOME}/.aws/config
 
 .PHONY: help
 help:
