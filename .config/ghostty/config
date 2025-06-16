@@ -10,5 +10,5 @@ macos-option-as-alt = true
 shell-integration-features = no-cursor
 theme = Brogrammer
 window-width = 160
-window-height = 50
+window-height = 48
 config-file = ?./config.local
