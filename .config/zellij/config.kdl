@@ -434,6 +434,7 @@ default_layout "classic"
 // Default: true
 //
 // show_startup_tips false
+show_startup_tips false
 
 env {
     TERM "xterm-256color"
