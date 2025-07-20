@@ -105,7 +105,7 @@ command -v trivy > /dev/null 2>&1 && source <(trivy completion zsh)
 command -v gobuster > /dev/null 2>&1 && source <(gobuster completion zsh) && compdef _gobuster gobuster
 command -v gitleaks > /dev/null 2>&1 && source <(gitleaks completion zsh)
 command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
-if [[ -z $SSH_CONNECTION && $TERM_PROGRAM = "ghostty" ]]; then
+if [[ -z $SSH_CONNECTION ]]; then
   command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true ZELLIJ_AUTO_EXIT=true && eval "$(zellij setup --generate-auto-start zsh)"
 fi
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
