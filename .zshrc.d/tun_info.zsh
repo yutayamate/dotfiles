@@ -3,7 +3,7 @@ function tun_info() {
     tun_info_msg=
     _addr_num=$(
         ifconfig | \
-        grep -E '^(tun|utun)[0-9]+' -A2 | \
+        grep -E '^(u?tun|wg)[0-9]+' -A2 | \
         awk '{ if (NR % 3) ORS=","; else ORS="\n"; print; }' | \
         grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' | \
         wc -l
