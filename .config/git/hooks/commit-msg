@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -x .git/hooks/$(basename $0) ]; then
+  .git/hooks/$(basename $0) "$@" || exit $?
+fi
+
 exec < /dev/tty
 cat << EOF
 Author: $(git config --get user.name) <$(git config --get user.email)>
