@@ -4,7 +4,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 
 all: install
 
-install: xdg git ssh vim zsh sheldon zellij ghostty alacritty aws
+install: xdg git ssh vim zsh sheldon zellij ghostty alacritty aws containers
 
 .PHONY: xdg
 xdg:
@@ -74,6 +74,11 @@ endif
 aws:
 	@mkdir -p ${HOME}/.aws
 	@ln -sinv ${PWD}/.aws/config ${HOME}/.aws/config
+
+.PHONY: containers
+containers:
+	@mkdir -p ${HOME}/.config/containers
+	@ln -sinv ${PWD}/.config/containers/containers.conf ${HOME}/.config/containers/containers.conf
 
 .PHONY: help
 help:
