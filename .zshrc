@@ -97,6 +97,8 @@ command -v orbctl > /dev/null 2>&1 && source <(orbctl completion zsh) && compdef
 command -v orb > /dev/null 2>&1 && source <(orb completion zsh) && compdef _orb orb
 command -v vctl > /dev/null 2>&1 && [ $(uname -m) = "amd64" ] && source <(vctl completion zsh) && compdef _vctl vctl
 command -v colima > /dev/null 2>&1 && source <(colima completion zsh)
+command -v podman > /dev/null 2>&1 && alias docker="podman"
+command -v podman-compose > /dev/null 2>&1 && alias docker-compose="podman-compose"
 command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
 command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
 command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
