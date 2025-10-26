@@ -6,6 +6,9 @@ function docker_info() {
     if [[ -e $HOME/.orbstack/run/docker.sock ]]; then
         docker_info_msg+="[orbstack:running]"
     fi
+    if [[ $(pgrep -f podman-machine) ]]; then
+        docker_info_msg+="[podman:running]"
+    fi
 }
 
 add-zsh-hook precmd docker_info
