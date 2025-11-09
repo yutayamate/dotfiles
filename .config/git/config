@@ -5,9 +5,6 @@
 [pull]
     rebase = false
 
-[core]
-    hooksPath = ~/.config/git/hooks
-
 [credential "https://github.com"]
 	helper =
 	helper = !gh auth git-credential
