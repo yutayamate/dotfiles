@@ -1,5 +1,6 @@
 brew "awscli"
 brew "azure-cli"
+brew "cargo-binstall"
 brew "docker"
 brew "docker-compose"
 brew "docker-credential-helper"
