@@ -93,16 +93,7 @@ command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPLETION_TRIGGER="~~" FZF_COMPLETION_OPTS="--border --info=inline" && source <(fzf --zsh)
 command -v docker > /dev/null 2>&1 && source <(docker completion zsh)
 command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
-command -v orbctl > /dev/null 2>&1 && source <(orbctl completion zsh) && compdef _orbctl orbctl
-command -v orb > /dev/null 2>&1 && source <(orb completion zsh) && compdef _orb orb
-command -v colima > /dev/null 2>&1 && source <(colima completion zsh)
 command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
-command -v pomerium-cli > /dev/null 2>&1 && source <(pomerium-cli completion zsh) && compdef _pomerium-cli pomerium-cli
-command -v syft > /dev/null 2>&1 && source <(syft completion zsh) && compdef _syft syft
-command -v grype > /dev/null 2>&1 && source <(grype completion zsh) && compdef _grype grype
-command -v trivy > /dev/null 2>&1 && source <(trivy completion zsh)
-command -v gobuster > /dev/null 2>&1 && source <(gobuster completion zsh) && compdef _gobuster gobuster
-command -v gitleaks > /dev/null 2>&1 && source <(gitleaks completion zsh)
 command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
 if [[ $(pgrep -f podman-machine) ]]; then
     export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}') DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0
