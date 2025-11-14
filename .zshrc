@@ -91,11 +91,6 @@ alias cargo-binstall-get='mkdir -p ~/.cargo/bin && curl -L --proto "=https" --tl
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh)
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPLETION_TRIGGER="~~" FZF_COMPLETION_OPTS="--border --info=inline" && source <(fzf --zsh)
-command -v docker > /dev/null 2>&1 && source <(docker completion zsh)
-command -v podman > /dev/null 2>&1 && source <(docker completion zsh)
-command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
-command -v minikube > /dev/null 2>&1 && source <(minikube completion zsh)
-command -v roc > /dev/null 2>&1 && source <(roc completion zsh) && compdef _roc roc
 if [[ $(pgrep -f podman-machine) ]]; then
     export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}') DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0
 fi
