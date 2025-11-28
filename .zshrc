@@ -95,7 +95,7 @@ if [[ $(pgrep -f podman-machine) ]]; then
     export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}') DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0
 fi
 if [[ -z $SSH_CONNECTION && $TERM_PROGRAM != "vscode" ]]; then
-  command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true ZELLIJ_AUTO_EXIT=false && eval "$(zellij setup --generate-auto-start zsh)"
+  command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true ZELLIJ_AUTO_EXIT=true && eval "$(zellij setup --generate-auto-start zsh)"
 fi
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   source $GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration
