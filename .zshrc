@@ -94,7 +94,7 @@ command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPL
 if [[ $(pgrep -f podman-machine) ]]; then
     export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}') DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0
 fi
-if [[ -z $SSH_CONNECTION && $TERM_PROGRAM != "vscode" ]]; then
+if [[ -z $SSH_CONNECTION ]]; then
   command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=false ZELLIJ_AUTO_EXIT=false && eval "$(zellij setup --generate-auto-start zsh)"
 fi
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
