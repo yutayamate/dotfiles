@@ -308,7 +308,6 @@ web_client {
 // Default: "default"
 //
 // default_layout "compact"
-default_layout "classic"
 
 // The folder in which Zellij will look for layouts
 // (Requires restart)
