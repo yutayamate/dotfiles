@@ -13,4 +13,5 @@ window-width = 160
 window-height = 48
 window-padding-x = 8
 theme =
+keybind = shift+enter=text:\x1b\r
 config-file = ?./config.local
