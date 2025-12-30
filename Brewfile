@@ -1,5 +1,3 @@
-brew "awscli"
-brew "azure-cli"
 brew "bat"
 brew "cargo-binstall"
 brew "docker"
@@ -9,6 +7,7 @@ brew "fzf"
 brew "gh"
 brew "jq"
 brew "kubernetes-cli"
+brew "mas"
 brew "mise"
 brew "p7zip"
 brew "podman"
@@ -20,3 +19,6 @@ brew "hashicorp/tap/terraform"
 cask "ghostty"
 cask "gcloud-cli"
 cask "visual-studio-code"
+mas "Magnet", id: 441258766
+mas "Snippety", id: 1530751461
+mas "TextSniper", id: 1528890965
