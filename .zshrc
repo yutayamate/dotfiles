@@ -37,6 +37,7 @@ setopt correct
 setopt correct_all
 setopt extended_history
 setopt glob_subst
+setopt hash_executables_only
 setopt hist_expand
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
