@@ -4,19 +4,23 @@ if [ -x .git/hooks/$(basename $0) ]; then
   .git/hooks/$(basename $0) "$@" || exit $?
 fi
 
-exec < /dev/tty
-cat << EOF
-Author: $(git config --get user.name) <$(git config --get user.email)>
-Date:   $(date -R)
+if [ -t 1 ] || [ -t 2 ]; then
+    exec < /dev/tty
+    cat << EOF
+    Author: $(git config --get user.name) <$(git config --get user.email)>
+    Date:   $(date -R)
 
-    $(cat $1)
+        $(cat $1)
 
 EOF
-while true; do
-    read -p "Do you want to finalize this change (y/n)? " yn
-    case $yn in
-        [Yy]* ) exit 0;;
-        [Nn]* ) exit 1;;
-        * ) echo "Please answer 'y' or 'n'";;
-    esac
-done
+    while true; do
+        read -p "Do you want to finalize this change (y/n)? " yn
+        case $yn in
+            [Yy]* ) exit 0;;
+            [Nn]* ) exit 1;;
+            * ) echo "Please answer 'y' or 'n'";;
+        esac
+    done
+else
+    echo "Warning: No TTY available, skipping commit-msg confirmation." >&2
+fi
