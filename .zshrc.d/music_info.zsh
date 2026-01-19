@@ -1,9 +1,7 @@
 function music_info() {
     local _track_name
     music_info_msg=
-
     command -v osascript >/dev/null 2>&1 || return
-
     if pgrep -x "Music" >/dev/null 2>&1; then
         _track_name=$(
             osascript <<'EOF' 2>/dev/null
