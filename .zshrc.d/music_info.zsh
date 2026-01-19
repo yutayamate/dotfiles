@@ -3,6 +3,7 @@ typeset -g MUSIC_INFO_PID=""
 
 function music_info_async() {
     [[ -n $MUSIC_INFO_PID ]] && kill -0 $MUSIC_INFO_PID 2>/dev/null && return
+
     (
         local track=""
         if pgrep -x "Music" >/dev/null 2>&1; then
@@ -15,6 +16,7 @@ function music_info_async() {
 EOF
             )
         fi
+
         if [[ -n $track ]]; then
             MUSIC_INFO_MSG="[♫:${track}]"
         else
@@ -22,6 +24,7 @@ EOF
         fi
         zle reset-prompt 2>/dev/null
     ) &
+
     MUSIC_INFO_PID=$!
 }
 
