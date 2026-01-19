@@ -1,14 +1,18 @@
 function music_info() {
     local _track_name
     music_info_msg=
-    if [[ $(pgrep -f Music.app) ]]; then
+
+    command -v osascript >/dev/null 2>&1 || return
+
+    if pgrep -x "Music" >/dev/null 2>&1; then
         _track_name=$(
-            command -v osascript > /dev/null 2>&1 && \
-            osascript -e '''
-                try
-                    tell application "Music" to get name of current track
-                end try
-            '''
+            osascript <<'EOF' 2>/dev/null
+                tell application "Music"
+                    if player state is playing then
+                        return name of current track
+                    end if
+                end tell
+EOF
         )
     fi
     if [[ -n $_track_name ]]; then
