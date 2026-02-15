@@ -2,8 +2,15 @@
 uvx = true
 
 [tools]
+bat = "latest"
+"cargo:sheldon" = "latest"
+jq = "latest"
+kubectl = "latest"
 "pipx:Faker" = "latest"
 "pipx:checkov" = "latest"
 "pipx:coolname" = "latest"
 "pipx:tox" = "latest"
+terraform = "latest"
 uv = "latest"
+yq = "latest"
+zellij = "latest"
