@@ -1,7 +1,6 @@
 brew "docker"
 brew "docker-compose"
 brew "docker-credential-helper"
-brew "gh"
 brew "mas"
 brew "mise"
 brew "p7zip"
