@@ -79,6 +79,7 @@ aws:
 containers:
 	@mkdir -p ${HOME}/.config/containers
 	@ln -sinv ${PWD}/.config/containers/containers.conf ${HOME}/.config/containers/containers.conf
+	@ln -sinv ${PWD}/.config/containers/registries.conf ${HOME}/.config/containers/registries.conf
 
 .PHONY: mise
 mise:
