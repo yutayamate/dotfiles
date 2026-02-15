@@ -2,6 +2,8 @@
 uvx = true
 
 [tools]
+aws-cli = { version = "latest", symlink_bins = "true" }
+azure-cli = "latest"
 bat = "latest"
 cargo-binstall = "latest"
 "cargo:sheldon" = "latest"
