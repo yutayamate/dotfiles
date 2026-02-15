@@ -3,6 +3,7 @@ uvx = true
 
 [tools]
 bat = "latest"
+cargo-binstall = "latest"
 "cargo:sheldon" = "latest"
 jq = "latest"
 kubectl = "latest"
