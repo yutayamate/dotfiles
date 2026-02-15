@@ -1,0 +1,9 @@
+[settings.pipx]
+uvx = true
+
+[tools]
+"pipx:Faker" = "latest"
+"pipx:checkov" = "latest"
+"pipx:coolname" = "latest"
+"pipx:tox" = "latest"
+uv = "latest"

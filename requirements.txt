@@ -1,6 +1,0 @@
-coolname
-checkov
-Faker
-PyJWT
-PyYAML
-tox

@@ -4,7 +4,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 
 all: install
 
-install: xdg git ssh vim zsh sheldon zellij ghostty alacritty aws containers
+install: xdg git ssh vim zsh sheldon zellij ghostty alacritty aws containers mise
 
 .PHONY: xdg
 xdg:
@@ -79,6 +79,11 @@ aws:
 containers:
 	@mkdir -p ${HOME}/.config/containers
 	@ln -sinv ${PWD}/.config/containers/containers.conf ${HOME}/.config/containers/containers.conf
+
+.PHONY: mise
+mise:
+	@mkdir -p ${HOME}/.config/mise
+	@ln -sinv ${PWD}/.config/mise/config.toml ${HOME}/.config/mise/config.toml
 
 .PHONY: help
 help:
