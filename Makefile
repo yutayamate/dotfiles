@@ -2,8 +2,10 @@ OS := $(shell uname -s)
 XDG_CONFIG_HOME ?= ${HOME}/.config
 .DEFAULT_GOAL := help
 
+.PHONY: all
 all: install
 
+.PHONY: install
 install: xdg git ssh vim zsh sheldon zellij ghostty alacritty aws docker containers mise
 
 .PHONY: xdg
