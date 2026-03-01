@@ -10,3 +10,4 @@ cask "visual-studio-code"
 mas "Magnet", id: 441258766
 mas "Snippety", id: 1530751461
 mas "TextSniper", id: 1528890965
+mas "Unsplash Wallpapers", id: 1284863847
