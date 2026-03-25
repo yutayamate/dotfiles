@@ -50,7 +50,6 @@ github = "yutayamate/dotfiles"
 use = [
     ".zshrc.d/container_info.zsh",
     ".zshrc.d/music_info.zsh",
-    ".zshrc.d/podman_docker_setup.zsh",
     ".zshrc.d/prompt_kali_setup.zsh",
     ".zshrc.d/tun_info.zsh",
     ".zshrc.d/vm_info.zsh"

@@ -95,9 +95,6 @@ command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 command -v gh > /dev/null 2>&1 && source <(gh completion -s zsh)
 command -v gitleaks > /dev/null 2>&1 && source <(gitleaks completion zsh)
 command -v yq > /dev/null 2>&1 && source <(yq completion zsh)
-if [[ $(pgrep -f podman-machine) ]]; then
-    export DOCKER_HOST=unix://$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}') DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0
-fi
 if [[ -z $SSH_CONNECTION ]]; then
   command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=false ZELLIJ_AUTO_EXIT=false && eval "$(zellij setup --generate-auto-start zsh)"
 fi
