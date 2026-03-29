@@ -94,6 +94,7 @@ command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPL
 command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 command -v gh > /dev/null 2>&1 && source <(gh completion -s zsh)
 command -v gitleaks > /dev/null 2>&1 && source <(gitleaks completion zsh)
+command -v jc > /dev/null 2>&1 && source <(jc -Z) 2>/dev/null; compdef _jc jc
 command -v yq > /dev/null 2>&1 && source <(yq completion zsh)
 if [[ -z $SSH_CONNECTION ]]; then
   command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=false ZELLIJ_AUTO_EXIT=false && eval "$(zellij setup --generate-auto-start zsh)"
