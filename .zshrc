@@ -92,6 +92,7 @@ command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(shel
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPLETION_TRIGGER="~~" FZF_COMPLETION_OPTS="--border --info=inline" && source <(fzf --zsh)
 command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
+command -v k9s > /dev/null 2>&1 && source <(k9s completion zsh)
 command -v gh > /dev/null 2>&1 && source <(gh completion -s zsh)
 command -v gitleaks > /dev/null 2>&1 && source <(gitleaks completion zsh)
 command -v jc > /dev/null 2>&1 && source <(jc -Z) 2>/dev/null; compdef _jc jc
