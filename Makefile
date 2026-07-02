@@ -6,7 +6,7 @@ XDG_CONFIG_HOME ?= ${HOME}/.config
 all: install
 
 .PHONY: install
-install: xdg git ssh vim zsh sheldon zellij ghostty alacritty aws docker containers mise
+install: xdg git ssh vim zsh sheldon zellij ghostty alacritty aws docker containers mise codex claude
 
 .PHONY: xdg
 xdg:
@@ -94,6 +94,16 @@ containers:
 mise:
 	@mkdir -p ${HOME}/.config/mise
 	@ln -sinv ${PWD}/.config/mise/config.toml ${HOME}/.config/mise/config.toml
+
+.PHONY: codex
+codex:
+	@mkdir -p ${HOME}/.codex
+	@ln -sinv ${PWD}/.codex/AGENTS.md ${HOME}/.codex/AGENTS.md
+
+.PHONY: claude
+claude:
+	@mkdir -p ${HOME}/.claude
+	@ln -sinv ${PWD}/.claude/CLAUDE.md ${HOME}/.claude/CLAUDE.md
 
 .PHONY: help
 help:
