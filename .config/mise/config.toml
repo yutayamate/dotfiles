@@ -8,6 +8,7 @@ uvx = true
 aws-cli = { version = "latest", symlink_bins = "true" }
 bat = "latest"
 checkov = "latest"
+codex = "latest"
 fzf = "latest"
 gcloud = "latest"
 gh = "latest"

@@ -7,11 +7,16 @@ brew "p7zip"
 brew "podman"
 brew "ripgrep"
 brew "sevenzip"
+cask "burp-suite"
+cask "codex-app"
 cask "firefox"
 cask "ghostty"
 cask "google-chrome"
 cask "viber"
 cask "visual-studio-code"
+cask "vlc"
+cask "wireshark-app"
+cask "zoom"
 mas "Adobe Lightroom", id: 1451544217
 mas "Dark Reader for Safari", id: 1438243180
 mas "Infuse", id: 1136220934
