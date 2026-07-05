@@ -64,5 +64,7 @@ window-width = 160
 window-height = 48
 window-padding-x = 8
 theme = Brogrammer
+# theme = Solarized Dark Higher Contrast
+# foreground = #dddddd
 keybind = shift+enter=text:\x1b\r
 config-file = ?./config.local
