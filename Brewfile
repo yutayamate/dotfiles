@@ -29,3 +29,4 @@ mas "Snippety", id: 1530751461
 mas "Tailscale", id: 1475387142
 mas "TextSniper", id: 1528890965
 mas "uBlock Origin Lite", id: 6745342698
+mas "Unsplash Wallpapers", id: 1284863847
