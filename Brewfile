@@ -12,7 +12,6 @@ cask "ghostty"
 cask "google-chrome"
 cask "viber"
 cask "visual-studio-code"
-cask "vlc"
 cask "zoom"
 mas "Adobe Lightroom", id: 1451544217
 mas "Dark Reader for Safari", id: 1438243180
