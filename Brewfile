@@ -14,7 +14,6 @@ cask "google-chrome"
 cask "notion"
 cask "viber"
 cask "visual-studio-code"
-cask "zoom"
 mas "Adobe Lightroom", id: 1451544217
 mas "Dark Reader for Safari", id: 1438243180
 mas "Infuse", id: 1136220934
