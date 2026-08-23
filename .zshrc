@@ -88,6 +88,7 @@ RPS1='%F{yellow}${vcs_info_msg_0_}'
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
+command -v brew > /dev/null 2>&1 && export HOMEBREW_NO_ASK=1 && eval "$(/opt/homebrew/bin/brew shellenv)"
 command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh)
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPLETION_TRIGGER="~~" FZF_COMPLETION_OPTS="--border --info=inline" && source <(fzf --zsh)
