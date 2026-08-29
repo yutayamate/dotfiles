@@ -1,0 +1,63 @@
+---
+- name: Configure Kali Linux
+  hosts: all
+  become: true
+  gather_facts: true
+  vars:
+    timezone: Asia/Tokyo
+    packages:
+      - autorecon
+      - ansible-core
+      - avahi-daemon
+      - chisel
+      - crackmapexec
+      - jq
+      - openssh-server
+      - peass
+
+  pre_tasks:
+    - name: Require --limit option
+      ansible.builtin.fail:
+        msg: "Use -l or --limit when running this playbook."
+      when: (ansible_limit | default('') | trim | length) == 0
+      run_once: true
+
+    - name: Read current timezone
+      ansible.builtin.command:
+        cmd: timedatectl show --property=Timezone --value
+      register: current_timezone
+      changed_when: false
+
+    - name: Set timezone
+      ansible.builtin.command:
+        cmd: "timedatectl set-timezone {{ timezone }}"
+      when: current_timezone.stdout != timezone
+
+  tasks:
+    - name: Update APT cache and install required packages
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Enable and start services
+      ansible.builtin.systemd_service:
+        name: "{{ item }}"
+        enabled: true
+        state: started
+      loop:
+        - ssh.service
+        - avahi-daemon.service
+
+  post_tasks:
+    - name: Collect service state
+      ansible.builtin.service_facts:
+    - name: Verify required services
+      ansible.builtin.assert:
+        that:
+          - ansible_facts.services['ssh.service'].status == 'enabled'
+          - ansible_facts.services['ssh.service'].state == 'running'
+          - ansible_facts.services['avahi-daemon.service'].status == 'enabled'
+          - ansible_facts.services['avahi-daemon.service'].state == 'running'
+        success_msg: Kali Linux provisioning completed successfully
