@@ -16,10 +16,7 @@ cask "visual-studio-code"
 mas "Adobe Lightroom", id: 1451544217
 mas "Dark Reader for Safari", id: 1438243180
 mas "Infuse", id: 1136220934
-mas "Kindle", id: 302584613
-mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
-mas "Prime Video", id: 545519333
 mas "Slack", id: 803453959
 mas "Snippety", id: 1530751461
 mas "Tailscale", id: 1475387142
