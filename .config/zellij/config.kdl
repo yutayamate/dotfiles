@@ -315,7 +315,6 @@ load_plugins {
 //   - none (equivalent to pane_frames false)
 //
 // pane_frame_style "titles"
-pane_frame_style "full"
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -642,3 +641,5 @@ web_client {
 env {
     TERM "xterm-256color"
 }
+
+show_startup_tips false
