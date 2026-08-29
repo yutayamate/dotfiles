@@ -8,6 +8,7 @@ CLOUDSDK_PYTHON = { value = "{{ tools.python.path }}/bin/python3", tools = true 
 uvx = true
 
 [tools]
+ansible-core = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
 azure-cli = { version = "latest", postinstall = '"$(dirname "$(mise which az)")/../azure-cli/bin/python" -m ensurepip --upgrade' }
 bat = "latest"
