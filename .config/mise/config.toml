@@ -17,7 +17,7 @@ codex = "latest"
 fzf = "latest"
 gcloud = { version = "latest", depends = ["python"] }
 gh = "latest"
-"github:yutayamate/kcrun" = "latest"
+"github:yutayamate/kcx" = "latest"
 gitleaks = "latest"
 jq = "latest"
 kubectl = "latest"
