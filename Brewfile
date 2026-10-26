@@ -10,7 +10,6 @@ cask "chatgpt"
 cask "firefox"
 cask "ghostty"
 cask "google-chrome"
-cask "notion"
 cask "visual-studio-code"
 mas "Adobe Lightroom", id: 1451544217
 mas "Dark Reader for Safari", id: 1438243180
