@@ -100,7 +100,7 @@ command -v jc > /dev/null 2>&1 && source <(jc -Z) 2>/dev/null; compdef _jc jc
 command -v yq > /dev/null 2>&1 && source <(yq completion zsh)
 command -v kcx > /dev/null 2>&1 && source <(kcx completion zsh)
 if [[ -z $SSH_CONNECTION ]]; then
-  command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=false ZELLIJ_AUTO_EXIT=false && eval "$(zellij setup --generate-auto-start zsh)"
+  command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true ZELLIJ_AUTO_EXIT=false && eval "$(zellij setup --generate-auto-start zsh)"
 fi
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   source $GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration
