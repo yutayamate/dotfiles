@@ -1,4 +1,9 @@
 function music_info() {
+    # Refresh at most once every five seconds, keeping the previous message.
+    if (( ${+_music_info_last_refresh} && SECONDS - _music_info_last_refresh < 5 )); then
+        return 0
+    fi
+    typeset -g _music_info_last_refresh=$SECONDS
     local _track_name
     music_info_msg=
     command -v osascript > /dev/null 2>&1 || return
