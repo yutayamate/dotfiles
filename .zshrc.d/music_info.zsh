@@ -6,7 +6,7 @@ function music_info() {
     typeset -g _music_info_last_refresh=$SECONDS
     local _track_name
     music_info_msg=
-    command -v osascript > /dev/null 2>&1 || return
+    command -v osascript > /dev/null 2>&1 || return 0
     if pgrep -x "Music" > /dev/null 2>&1; then
         _track_name=$(
             osascript <<'EOF' 2>/dev/null
