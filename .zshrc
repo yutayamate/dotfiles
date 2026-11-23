@@ -105,5 +105,8 @@ fi
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   source $GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration
 fi
+if [[ -r /opt/homebrew/opt/openssh-sk-provider/lib/sk-libfido2.dylib ]]; then
+  export SSH_SK_PROVIDER=/opt/homebrew/opt/openssh-sk-provider/lib/sk-libfido2.dylib
+fi
 
 test -e ~/.zshrc.local && source ~/.zshrc.local
