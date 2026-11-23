@@ -1,5 +1,70 @@
+# OS and editor files
 .DS_Store
-id_rsa
-.vscode
+._*
+.vscode/
+*.swp
+*.swo
+*~
+
+# Machine-specific overrides and environment secrets
 *.local
-.config/alacritty/alacritty.toml
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Generated platform-specific Alacritty configuration
+/.config/alacritty/alacritty.toml
+
+# Shell history and completion caches
+/.zsh_history
+/.zsh_history.*
+/.zcompdump*
+/.bash_history
+/.sqlite_history
+/.groovy/groovysh.history
+
+# SSH private keys and connection state (keep public keys and shared config)
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+id_ecdsa_sk
+id_ed25519_sk
+/.ssh/known_hosts
+/.ssh/known_hosts.*
+/.ssh/authorized_keys
+/.ssh/controlmasters/
+
+# Cloud and container credentials and caches
+/.config/gcloud/
+/.azure/
+/.aws/credentials
+/.aws/cli/cache/
+/.aws/sso/cache/
+/.config/gh/hosts.yml
+/.docker/contexts/
+/.docker/buildx/
+/.config/containers/auth.json
+/.config/containers/podman-connections.json
+/.kube/config
+/.kube/cache/
+
+# Terraform credentials, working directories and state (keep dependency locks)
+/.terraform.d/credentials.tfrc.json
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Git credentials
+/.git-credentials
+/.config/git/credentials
+
+# Plugin-manager generated state
+/.config/sheldon/plugins.lock
+
+# AI client directories: track only shared instruction files
+/.codex/*
+!/.codex/AGENTS.md
+/.claude/*
+!/.claude/CLAUDE.md
