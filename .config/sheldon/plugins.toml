@@ -24,18 +24,22 @@ defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file 
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
+rev = "53a26e287fbbe2dcebb3aa1801546c6de32416fa"
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
+rev = "989b23277ab33e8d5e82df6aed936e846db9d8b8"
 dir = "src"
 apply = ["fpath"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
+rev = "e6683f20e5c38d3e5447f45845d04ddda75d0f23"
 apply = ["defer"]
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
+rev = "85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5"
 apply = ["defer"]
 hooks.post = """
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
