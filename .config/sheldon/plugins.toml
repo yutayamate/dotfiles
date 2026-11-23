@@ -27,7 +27,8 @@ github = "romkatv/zsh-defer"
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
-apply = ["defer"]
+dir = "src"
+apply = ["fpath"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"

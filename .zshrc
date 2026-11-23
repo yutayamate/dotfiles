@@ -10,12 +10,8 @@ path=(
     ~/.local/(s|)bin(N-/)
     ~/.(s|)bin(N-/)
     /snap/(s|)bin(N-/)
-    /opt/homebrew/opt/*/(s|)bin(N-/)
     /opt/homebrew/(s|)bin(N-/)
-    /usr/local/opt/*/(s|)bin(N-/)
-    /usr/local/*/(s|)bin(N-/)
     /usr/local/(s|)bin(N-/)
-    /opt/*/(s|)bin(N-/)
     /usr/(s|)bin(N-/)
     /(s|)bin(N-/)
     $path
@@ -34,7 +30,6 @@ setopt auto_param_keys
 setopt auto_param_slash
 setopt auto_pushd
 setopt correct
-setopt correct_all
 setopt extended_history
 setopt glob_subst
 setopt hash_executables_only
@@ -55,7 +50,7 @@ setopt transient_rprompt
 
 autoload -Uz add-zsh-hook
 autoload -Uz colors && colors
-autoload -Uz compinit && compinit
+autoload -Uz compinit
 autoload -Uz history-search-end
 autoload -Uz promptinit && promptinit
 autoload -Uz select-word-style && select-word-style bash
@@ -88,25 +83,31 @@ RPS1='%F{yellow}${vcs_info_msg_0_}'
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
-command -v brew > /dev/null 2>&1 && export HOMEBREW_NO_ASK=1 && eval "$(/opt/homebrew/bin/brew shellenv)"
-command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)" && source <(sheldon completions --shell zsh)
+command -v brew > /dev/null 2>&1 && export HOMEBREW_NO_ASK=1 && eval "$(brew shellenv)"
+command -v sheldon > /dev/null 2>&1 && eval "$(sheldon source)"
+compinit
+
+command -v sheldon > /dev/null 2>&1 && source <(sheldon completions --shell zsh)
 command -v mise > /dev/null 2>&1 && eval "$(mise activate zsh)" && source <(mise completions zsh)
 command -v fzf > /dev/null 2>&1 && export FZF_DEFAULT_OPTS="--reverse" FZF_COMPLETION_TRIGGER="~~" FZF_COMPLETION_OPTS="--border --info=inline" && source <(fzf --zsh)
 command -v kubectl > /dev/null 2>&1 && source <(kubectl completion zsh)
 command -v k9s > /dev/null 2>&1 && source <(k9s completion zsh)
 command -v gh > /dev/null 2>&1 && source <(gh completion -s zsh)
 command -v gitleaks > /dev/null 2>&1 && source <(gitleaks completion zsh)
-command -v jc > /dev/null 2>&1 && source <(jc -Z) 2>/dev/null; compdef _jc jc
+command -v jc > /dev/null 2>&1 && source <(jc -Z) 2>/dev/null && compdef _jc jc
 command -v yq > /dev/null 2>&1 && source <(yq completion zsh)
 command -v kcx > /dev/null 2>&1 && source <(kcx completion zsh)
+
 if [[ -z $SSH_CONNECTION ]]; then
   command -v zellij > /dev/null 2>&1 && export ZELLIJ_AUTO_ATTACH=true ZELLIJ_AUTO_EXIT=false && eval "$(zellij setup --generate-auto-start zsh)"
 fi
+
 if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
   source $GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration
 fi
-if [[ -r /opt/homebrew/opt/openssh-sk-provider/lib/sk-libfido2.dylib ]]; then
-  export SSH_SK_PROVIDER=/opt/homebrew/opt/openssh-sk-provider/lib/sk-libfido2.dylib
+
+if [[ -r $HOMEBREW_PREFIX/opt/openssh-sk-provider/lib/sk-libfido2.dylib ]]; then
+  export SSH_SK_PROVIDER=$HOMEBREW_PREFIX/opt/openssh-sk-provider/lib/sk-libfido2.dylib
 fi
 
 test -e ~/.zshrc.local && source ~/.zshrc.local
