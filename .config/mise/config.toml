@@ -2,6 +2,7 @@
 CLOUDSDK_PYTHON = { value = "{{ tools.python.path }}/bin/python3", tools = true }
 
 [settings]
+activate_aggressive = true
 minimum_release_age = "7d"
 
 [settings.pipx]
